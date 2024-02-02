@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<!--
+	Ce fichier HTML sert de base à tous les modèles en héritant.
+	Il contient les éléments qui seront présents sur toutes les pages du site.
+	En particulier les entêtes HTML, les header et footer et éventuellement le menu principal
+-->
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mon site</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	{# HEADER #}
+	<header>
+		<nav>
+			<!-- Menu présent dans toutes les pages héritant (extends) de ce modèle -->
+			<ul>
+				<li>
+					<a href="accueil.php">Accueil</a>
+				</li>
+				<li>
+					<a href="page1-cat.php">Catégorie 1</a>
+				</li>
+				<li>
+					<a href="page2-cat.php">Catégorie 2</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	{# MAIN #}
+	<main>
+		{# Ceci est un commentaire en TWIG #}
+		{# La ligne ci-dessous définit un bloc TWIG avec un contenu par défault.
+		On peut spécialiser dans les modèles fils en remplaçant le contenu par un autre #}
+		{% block main %}
+			<p>test</p>
+
+		{% endblock %}
+	</main>
+
+	{# FOOTER #}
+	<footer>
+		<p>Pied de page</p>
+	</footer>
+</body>
+
+</html>

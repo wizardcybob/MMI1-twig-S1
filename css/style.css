@@ -1,0 +1,15 @@
+body {
+	background-color: grey;
+}
+
+header,
+footer {
+	background-color: white;
+	padding: 60px;
+	max-width: 1000px;
+}
+
+main {
+	max-width: 960px;
+	padding: 0 20px;
+}
