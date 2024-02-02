@@ -1,20 +1,25 @@
 /* GENERAL */
 body {
-	background-color: grey;
+	background-color: lightgrey;
 }
 
 header,
 footer {
-	background-color: white;
+	background-color: black;
 	padding: 60px;
 	max-width: 1000px;
 	margin: 0 auto;
+	color: white;
 }
 
 main {
 	max-width: 960px;
 	padding: 0 20px;
 	margin: 0 auto;
+}
+
+a {
+	color: white;
 }
 
 

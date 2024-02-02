@@ -13,5 +13,5 @@ $twig = init_twig();
 // Le second paramètre est un tableau contenant les variables envoyées au modèle Twig
 // Chaque ligne indique 'nom-variable-twig' => valeur-variable-twig
 echo $twig->render('accueil.twig', [
-	'titre' => 'titre page accueil',
+	'titre' => 'Page d\'accueil',
 ]);
