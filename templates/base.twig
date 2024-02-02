@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
-<!--
+{#
 	Ce fichier HTML sert de base à tous les modèles en héritant.
 	Il contient les éléments qui seront présents sur toutes les pages du site.
 	En particulier les entêtes HTML, les header et footer et éventuellement le menu principal
--->
+#}
 
 <head>
 	<meta charset="UTF-8">
@@ -17,9 +17,14 @@
 <body>
 	{# HEADER #}
 	<header>
+		{# LOGO  #}
+		<div class="header_identity_website">
+			<img class="logo" src="./images/logo.png" alt="Logo du site">
+			<h1>TMB site</h1>
+		</div>
+		{# MENU présent dans toutes les pages héritant (extends) de ce modèle  #}
 		<nav>
-			<!-- Menu présent dans toutes les pages héritant (extends) de ce modèle -->
-			<ul>
+			<ul class="header_menu">
 				<li>
 					<a href="accueil.php">Accueil</a>
 				</li>

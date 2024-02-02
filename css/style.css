@@ -1,3 +1,4 @@
+/* GENERAL */
 body {
 	background-color: grey;
 }
@@ -7,9 +8,35 @@ footer {
 	background-color: white;
 	padding: 60px;
 	max-width: 1000px;
+	margin: 0 auto;
 }
 
 main {
 	max-width: 960px;
 	padding: 0 20px;
+	margin: 0 auto;
+}
+
+
+/* --HEADER-- */
+header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.header_identity_website {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.logo {
+	filter: invert(1);
+	width: 100px;
+}
+
+/* MENU */
+.header_menu {
+	display: flex;
+	gap: 40px;
 }
