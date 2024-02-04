@@ -5,7 +5,53 @@ et un bloc main dont le contenu est spécialisé pour afficher un livre #}
 
 {% block main %}
 
-	<p>{{ titre }}</p>
+{% for refuge in all_refuges %}
 
+	{# age calculation #}
+	{% set startDate = refuge.creation %}
+    {% set difference = date(now|date()).diff(date(startDate)) %}
+    {% set refuge_years = difference.y %}  {# y = years #}
+
+	<div class="card">
+		<h3>{{ refuge.name }}</h3>
+		{# main presentation #}
+		<div class="card-main_presentation">
+			{# left part -> PHOTO #}
+			{% if refuge.photo %}
+			<div class="card-photo">
+				<img src="{{ refuge.photo }}" alt="{{ refuge.name }}" width="320">
+			</div>
+			{% endif %}
+			{# right part -> card informations #}
+			<ul class="card-informations">
+				{# ALTITUDE #}
+				{% if refuge.altitude %}
+					<li><span>Altitude : </span>{{ refuge.altitude }} m</li>
+				{% endif %}
+				
+				{# COUNTRY #}
+				{% if refuge.country %}
+					<li><span>Pays : </span>{{ refuge.country }}</li>
+				{% endif %}
+				
+				{# CREATION #}
+				{% if refuge.creation %}
+					<li><span>Création : </span>{{ refuge.creation|date("d/m/Y") }}</li>
+				{% endif %}
+				
+				{# AGE #}
+				{% if refuge_years %}
+					<li><span>Nombre d'années d'activité : </span>{{ refuge_years }} ans</li>
+				{% endif %}
+			</ul>
+		</div>
+		{# MAP #}
+		{% if refuge.map %}
+			<div class="card-map">
+				<iframe src="{{ refuge.map }}" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+			</div>
+		{% endif %}
+	</div>
+{% endfor %}
 
 {% endblock main %}

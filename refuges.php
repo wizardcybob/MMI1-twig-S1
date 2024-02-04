@@ -14,5 +14,5 @@ include('include/data1-refuges.php');
 // Le second paramètre est un tableau contenant les variables envoyées au modèle Twig
 // Chaque ligne indique 'nom-variable-twig' => valeur-variable-twig
 echo $twig->render('refuges.twig', [
-	'titre' => 'Page des refuges',
+	'all_refuges' => $refuges_data,
 ]);
