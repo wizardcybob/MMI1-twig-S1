@@ -38,4 +38,4 @@ $chevre = [
 ];
 
 // ALL ANIMALS
-$animaux = [$marmotte, $bouquetin, $chamois, $renard, $chevre];
+$animals_data = [$marmotte, $bouquetin, $chamois, $renard, $chevre];
