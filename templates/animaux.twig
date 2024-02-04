@@ -5,7 +5,32 @@ et un bloc main dont le contenu est spécialisé pour afficher un livre #}
 
 {% block main %}
 
-	<p>{{ titre }}</p>
+{% for animal in all_animals %}
+	<div class="card">
+		<h3>{{ animal.name }}</h3>
+		{# main presentation #}
+		<div class="card-main_presentation">
+			{# left part -> PHOTO #}
+			{% if animal.photo %}
+			<div class="card-photo">
+				<img src="{{ animal.photo }}" alt="{{ animal.name }}" width="320">
+			</div>
+			{% endif %}
+			{# right part -> card informations #}
+			<ul class="card-informations">
+				{# HABITAT #}
+				{% if animal.habitat %}
+					<li><span>Habitat : </span>{{ animal.habitat }} m</li>
+				{% endif %}
+				
+				{# DESCRIPRION #}
+				{% if animal.description %}
+					<li><span>Descritpion : </span><p>{{ animal.description }}</p></li>
+				{% endif %}
+			</ul>
+		</div>
+	</div>
+{% endfor %}
 
 
 {% endblock main %}

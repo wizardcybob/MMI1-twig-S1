@@ -15,5 +15,5 @@ include('include/data3-animaux.php');
 // Le second paramètre est un tableau contenant les variables envoyées au modèle Twig
 // Chaque ligne indique 'nom-variable-twig' => valeur-variable-twig
 echo $twig->render('animaux.twig', [
-	'titre' => 'Page des animaux',
+	'all_animals' => $animals_data,
 ]);
