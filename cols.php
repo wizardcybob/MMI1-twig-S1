@@ -14,5 +14,5 @@ include('include/data2-cols.php');
 // Le second paramètre est un tableau contenant les variables envoyées au modèle Twig
 // Chaque ligne indique 'nom-variable-twig' => valeur-variable-twig
 echo $twig->render('cols.twig', [
-	'titre' => 'Page des cols',
+	'all_cols' => $cols_data,
 ]);

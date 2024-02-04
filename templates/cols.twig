@@ -5,7 +5,65 @@ et un bloc main dont le contenu est spécialisé pour afficher un livre #}
 
 {% block main %}
 
-	<p>{{ titre }}</p>
+{% for col in all_cols %}
+	<div class="card">
+		<h3>{{ col.name }}</h3>
+		{# main presentation #}
+		<div class="card-main_presentation">
+			{# left part -> PHOTO #}
+			{% if col.photos %}
+				<div class="card-photo-wrapper">
+					{% for photo in col.photos %}
+						<div class="card-photo" onclick="showImage(this)">
+							<img src="{{ photo }}" alt="{{ col.name }}" width="320">
+						</div>
+					{% endfor %}
+				</div>
+			{% endif %}
+			{# right part -> card informations #}
+			<ul class="card-informations">
+				{# ALTITUDE #}
+				{% if col.altitude %}
+					<li><span>Altitude : </span>{{ col.altitude }} m</li>
+				{% endif %}
+				
+				{# COUNTRY #}
+				{% if col.country %}
+					<li><span>Pays : </span>{{ col.country }}</li>
+				{% endif %}
+			</ul>
+		</div>
+		{# MAP #}
+		{% if col.map %}
+			<div class="card-map">
+				<iframe src="{{ col.map }}" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+			</div>
+		{% endif %}
+	</div>
+{% endfor %}
+
+{# DISPLAY BIG PHOTO ON CLICK #}
+<div class="overlay" onclick="hideImage()"></div>
+<div class="image-overlay"></div> 
+
+<script>
+	function showImage(clickedPhoto) {
+		var overlay = document.querySelector('.overlay');
+		var imageOverlay = document.querySelector('.image-overlay');
+		var photoUrl = clickedPhoto.querySelector('img').src;
+		
+		overlay.style.cssText = 'display: block; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); z-index: 1000;';
+		imageOverlay.style.cssText = 'display: block; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; height: 600px; background-size: cover; background-image: url(' + photoUrl + '); z-index: 1001;';
+	}
+
+	function hideImage() {
+		var overlay = document.querySelector('.overlay');
+		var imageOverlay = document.querySelector('.image-overlay');
+		
+		overlay.style.display = 'none';
+		imageOverlay.style.display = 'none';
+	}
+</script>
 
 
 {% endblock main %}
