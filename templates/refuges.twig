@@ -23,27 +23,35 @@ et un bloc main dont le contenu est spécialisé pour afficher un livre #}
 			</div>
 			{% endif %}
 			{# right part -> card informations #}
-			<ul class="card-informations">
-				{# ALTITUDE #}
-				{% if refuge.altitude %}
-					<li><span>Altitude : </span>{{ refuge.altitude }} m</li>
-				{% endif %}
-				
-				{# COUNTRY #}
-				{% if refuge.country %}
-					<li><span>Pays : </span>{{ refuge.country }}</li>
-				{% endif %}
-				
-				{# CREATION #}
-				{% if refuge.creation %}
-					<li><span>Création : </span>{{ refuge.creation|date("d/m/Y") }}</li>
-				{% endif %}
-				
-				{# AGE #}
-				{% if refuge_years %}
-					<li><span>Nombre d'années d'activité : </span>{{ refuge_years }} ans</li>
-				{% endif %}
-			</ul>
+			<div class="card-informations">
+				<ul>
+					{# ALTITUDE #}
+					{% if refuge.altitude %}
+						<li><span>Altitude : </span>{{ refuge.altitude }} m</li>
+					{% endif %}
+					
+					{# COUNTRY #}
+					{% if refuge.country %}
+						<li><span>Pays : </span>{{ refuge.country }}</li>
+					{% endif %}
+					
+					{# CREATION #}
+					{% if refuge.creation %}
+						<li><span>Création : </span>{{ refuge.creation|date("d/m/Y") }}</li>
+					{% endif %}
+					
+					{# AGE #}
+					{% if refuge_years %}
+						<li><span>Nombre d'années d'activité : </span>{{ refuge_years }} ans</li>
+					{% endif %}
+				</ul>
+				<div class="card-informations-footer">
+					{# AGE #}
+					{% if refuge.website %}
+						<a class="primary_btn" href="{{ refuge.website }}" target="_blank">Visiter leur site</a>
+					{% endif %}
+				</div>
+			</div>
 		</div>
 		{# MAP #}
 		{% if refuge.map %}
