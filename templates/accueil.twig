@@ -4,9 +4,52 @@
 et un bloc main dont le contenu est spécialisé pour afficher un livre #}
 
 {% block main %}
+     
+	<section>
+		<p>Bienvenue sur le site dédié au Tour du Mont Blanc (TMB), une aventure de randonnée exceptionnelle à travers les Alpes.</p>
+		<h2>À propos du Tour du Mont Blanc</h2>
+		<p>Le Tour du Mont Blanc est l'un des sentiers de grande randonnée les plus emblématiques du monde, offrant une boucle panoramique à travers la France, l'Italie, et la Suisse. Cette aventure de plusieurs jours vous conduit à travers des paysages spectaculaires, des cols alpins, des vallées verdoyantes, et des villages pittoresques.</p>
+		<p>Découvrez la diversité culturelle, la faune et la flore uniques de la région alpine tout en marchant autour du majestueux Mont Blanc.</p>
+	</section>
 
-	<h1>{{ titre }}</h1>
-	<p>texte directement dans le twig</p>
+	<section class="description">
+		<h2>Description</h2>
+		<p>Les caractéristiques qui font du TMB une expérience unique en son genre sont :</p>
+		<ul>
+			<li>Deux différents sens de marche</li>
+			<li>Différents points de départ: Courmayeur, Les Houches, Chamonix, Les Contamines, St Gervais, Chapieux, Orsières (Champex, La Fouly), Trient, Vallorcine</li>
+			<li>La possibilité d'utiliser les transports publics et les remontées mécaniques pour accélérer et raccourcir le chemin</li>
+			<li>De nombreuses variantes et plusieurs cabanes sur la route qui permettent la totale personnalisation de votre tour</li>
+		</ul>
+	</section>
+
+	<section class="statistiques">
+		<h2>Statistiques clés</h2>
+		<ul>
+			<li><span>Nombre de kilimètres :</span> 170 km</li>
+			<li><span>Dénivelé :</span> 10 000 m</li>
+			<li><span>Altitude maximale :</span> ~2700 mètres</li>
+			<li><span>Nombre de jours recommandés :</span> 7-9 jours</li>
+			<li><span>Nombre de pays traversés :</span> 3 (France, Italie, Suisse)</li>
+			<li><span>Difficulté :</span> un peu difficile</li>
+			<li><span>Départ / arrivée :</span> Les Houches (France)</li>
+		</ul>
+	</section>
+
+	<section class="galerie">
+		<h2>Galerie média</h2>
+		<div class="photos_area">
+			<div>
+				<img src="https://www.autourdumontblanc.com/asset/nuovo-tmb.jpg" alt="TMB Landscape">
+			</div>
+			<div>
+				<img src="https://www.autourdumontblanc.com/asset/nuovo-tmb.jpg" alt="TMB Landscape">
+			</div>
+		</div>
+		<div class="galerie_video">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/CMqYaZAdFpQ?si=qoTu8iO_0H6uH0Ru" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		</div>
+	</section>
 
 
 {% endblock main %}

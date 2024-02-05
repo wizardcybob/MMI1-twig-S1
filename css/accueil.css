@@ -1,0 +1,34 @@
+/* --ACCUEIL-- */
+section.description ul {
+    width: 800px;
+    margin: 10px auto 0;
+}
+section.description li {
+    list-style: disc;
+}
+
+section.statistiques span {
+    font-weight: bold;
+}
+
+section.galerie .photos_area {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes égales */
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.photos_area div {
+    overflow: hidden;
+}
+
+.photos_area div img {
+    width: 100%;
+}
+
+.galerie_video {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
