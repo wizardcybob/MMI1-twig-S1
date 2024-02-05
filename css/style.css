@@ -77,12 +77,23 @@ nav {
 
 .header_menu {
 	display: flex;
-	gap: 40px;
+	gap: 20px;
+}
+
+.header_menu a {
+	color: grey;
+	padding: 5px 10px;
+}
+
+.header_menu a:hover {
+	color: white;
 }
 
 /* ASIDE */
 
+
 /* MAIN */
+
 
 /* FOOTER*/
 footer span {
