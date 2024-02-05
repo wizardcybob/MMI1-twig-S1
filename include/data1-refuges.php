@@ -10,6 +10,18 @@ $refuge_argentiere = [
 	'altitude' => 2771,
 	'creation' => '08/27/1933', // m/d/Y -> help for age calculation
 	'photo' => 'https://cdn-s-www.ledauphine.com/images/E498C61A-C8C7-4E49-AC4B-624B85FEB2EA/NW_raw/au-total-pendant-sa-periode-d-ouverture-principal-le-refuge-n-aura-ete-ouvert-que-sept-jours-archives-photo-le-dl-1651676149.jpg',
+    'capacity' => 70,
+];
+
+$refuge_nantborrant = [
+    'name' => 'Refuge de Nant Borrant',
+    'website' => 'http://www.refugedenantborrant.com', // Ajoute le site web du refuge
+    'map' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2787.199529170274!2d6.738392114337012!3d45.75939327910647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478a6fa631d8a2e7%3A0x6deac1776990f97e!2sRefuge%20de%20Nant%20Borrant!5e0!3m2!1sfr!2sfr!4v1706895392861!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>', // Ajoute la carte Google Maps
+    'country' => 'France',
+    'altitude' => 1459,
+    'creation' => '08/15/1965', // Ajoute la date de création
+    'photo' => 'https://www.autourdumontblanc.com/asset/img/nant-borrant_citl.jpg',
+    'capacity' => 35,
 ];
 
 $refuge_torino = [
@@ -20,6 +32,7 @@ $refuge_torino = [
 	'altitude' => 3375,
 	'creation' => '08/05/1952', // m/d/Y -> help for age calculation
 	'photo' => 'https://www.refuges-montagne.fr/images/torino-00.jpg',
+    'capacity' => 90,
 ];
 
 $refuge_miage = [
@@ -30,6 +43,7 @@ $refuge_miage = [
     'altitude' => 1559,
     'creation' => '07/12/1926', // m/d/Y -> help for age calculation
     'photo' => 'https://static.savoie-mont-blanc.com/wp-content/uploads/external/c1538d3da70adb00968d04f4d202ab53-14655897-1745x1163.jpg',
+    'capacity' => 50,
 ];
 
 $refuge_elena = [
@@ -40,6 +54,7 @@ $refuge_elena = [
     'altitude' => 2062,
     'creation' => '09/18/1949', // m/d/Y -> help for age calculation
     'photo' => 'https://www.autourdumontblanc.com/asset/img/rifugio_elena_1-1_cit.jpg',
+    'capacity' => 80,
 ];
 
 $refuge_leschaux = [
@@ -50,8 +65,9 @@ $refuge_leschaux = [
     'altitude' => 2431,
     'creation' => '06/21/1920', // m/d/Y -> help for age calculation
     'photo' => 'https://static.savoie-mont-blanc.com/wp-content/uploads/external/39e991fadb10385ec5d4fa8b19404f8d-653069-1745x1163.jpg',
+    'capacity' => 80,
 ];
 
 
 // ALL REFUGES
-$refuges_data = [$refuge_argentiere, $refuge_torino, $refuge_miage, $refuge_elena, $refuge_leschaux];
+$refuges_data = [$refuge_argentiere, $refuge_nantborrant, $refuge_torino, $refuge_miage, $refuge_elena, $refuge_leschaux];

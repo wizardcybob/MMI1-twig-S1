@@ -13,7 +13,7 @@ et un bloc main dont le contenu est spécialisé pour afficher un livre #}
     {% set refuge_years = difference.y %}  {# y = years #}
 
 	<div class="card">
-		<h3>{{ refuge.name }}</h3>
+		<h2>{{ refuge.name }}</h2>
 		{# main presentation #}
 		<div class="card-main_presentation">
 			{# left part -> PHOTO #}
@@ -43,6 +43,11 @@ et un bloc main dont le contenu est spécialisé pour afficher un livre #}
 					{# AGE #}
 					{% if refuge_years %}
 						<li><span>Nombre d'années d'activité : </span>{{ refuge_years }} ans</li>
+					{% endif %}
+					
+					{# CAPACITY #}
+					{% if refuge.capacity %}
+						<li><span>Capacité : </span>{{ refuge.capacity }} places</li>
 					{% endif %}
 				</ul>
 				<div class="card-informations-footer">

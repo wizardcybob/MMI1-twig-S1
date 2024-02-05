@@ -10,8 +10,15 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>TMB site</title>
+	{# GOOGLE FONTS #}
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Protest+Riot&display=swap" rel="stylesheet">
+	{# STYLES #}
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/accueil.css">
+	<link rel="stylesheet" href="css/categorie.css">
 </head>
 
 <body>
@@ -37,6 +44,9 @@
 				<li>
 					<a href="animaux.php">Animaux</a>
 				</li>
+				<li>
+					<a href="plantes.php">Plantes</a>
+				</li>
 			</ul>
 		</nav>
 	</header>
@@ -47,14 +57,13 @@
 		{# La ligne ci-dessous définit un bloc TWIG avec un contenu par défault.
 		On peut spécialiser dans les modèles fils en remplaçant le contenu par un autre #}
 		{% block main %}
-			<p>test</p>
 
 		{% endblock %}
 	</main>
 
 	{# FOOTER #}
 	<footer>
-		<p>Pied de page</p>
+		<p>Site réalisé par <span>Chloé JACOB - wizardcybob</span></p>
 	</footer>
 </body>
 
