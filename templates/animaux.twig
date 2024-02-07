@@ -5,8 +5,17 @@ et un bloc main dont le contenu est spécialisé pour afficher un livre #}
 
 {% block main %}
 
+
+<div>
+	<ul class="sous-menu_categorie">
+        {% for animal in all_animals %}
+            <li><a href="#{{ animal.id }}">{{ animal.name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+
 {% for animal in all_animals %}
-	<div class="card">
+	<div class="card" id="{{ animal.id }}">
 		<h2>{{ animal.name }}</h2>
 		{# main presentation #}
 		<div class="card-main_presentation">
@@ -20,7 +29,7 @@ et un bloc main dont le contenu est spécialisé pour afficher un livre #}
 			<ul class="card-informations">
 				{# HABITAT #}
 				{% if animal.habitat %}
-					<li><span>Habitat : </span>{{ animal.habitat }} m</li>
+					<li><span>Habitat : </span>{{ animal.habitat }}</li>
 				{% endif %}
 				
 				{# DESCRIPRION #}
@@ -28,6 +37,7 @@ et un bloc main dont le contenu est spécialisé pour afficher un livre #}
 					<li><span>Descritpion : </span><p>{{ animal.description }}</p></li>
 				{% endif %}
 			</ul>
+			<a href="#{{ animal.look_id }}">{{ animal.look_name }}</a>
 		</div>
 	</div>
 {% endfor %}
