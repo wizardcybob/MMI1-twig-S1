@@ -5,15 +5,6 @@ body {
 	line-height: 1.3em;
 }
 
-header,
-footer {
-	background-color: black;
-	padding: 60px;
-	max-width: 1000px;
-	margin: 0 auto;
-	color: white;
-}
-
 main {
 	max-width: 960px;
 	padding: 50px 20px;
@@ -54,6 +45,20 @@ a {
 
 /* --HEADER-- */
 header {
+	background-color: black;
+	max-width: 1000px;
+	margin: 0 auto;
+	color: white;
+}
+
+.header_bandeau {
+	padding: 10px 60px;
+	background-color: green;
+	text-align: center;
+}
+
+.header_main-content {
+	padding: 60px;
 	display: flex;
 	justify-content: space-between;
 }
@@ -93,9 +98,46 @@ nav {
 
 
 /* MAIN */
+.sous-menu_categorie {
+	display: flex;
+	justify-content: space-around;
+}
+
+.sous-menu_categorie li {
+	padding: 10px 5px;
+	background-color: green;
+}
+
+.sous-menu_categorie li:hover {
+	background-color: darkgreen;
+}
+
+.clickable_image {
+	cursor: pointer;
+}
 
 
 /* FOOTER*/
+footer {
+	background-color: black;
+	padding: 60px;
+	max-width: 1000px;
+	margin: 0 auto;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+}
+
 footer span {
 	font-weight: bold;
+}
+
+.social_networks {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+}
+
+.social_networks .bi {
+	font-size: 28px;
 }

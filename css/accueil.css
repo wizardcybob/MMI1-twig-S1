@@ -1,4 +1,5 @@
 /* --ACCUEIL-- */
+/* ----DESCRIPTION---- */
 section.description ul {
     width: 800px;
     margin: 10px auto 0;
@@ -7,10 +8,33 @@ section.description li {
     list-style: disc;
 }
 
+/* ----STATISTIQUES---- */
 section.statistiques span {
     font-weight: bold;
 }
 
+section.statistiques > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+section.statistiques > div > * {
+    width: 50%;
+}
+
+.statistiques_image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.statistiques_image img {
+    width: 70%;
+}
+
+/* ----GALERIE---- */
 section.galerie .photos_area {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 colonnes égales */
