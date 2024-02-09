@@ -1,0 +1,54 @@
+
+/* --CONTACT-- */
+.text_contact {
+	text-align: center;
+}
+
+.form_area {
+	width: 600px;
+	margin: 0 auto;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+form label {
+	font-weight: bold;
+}
+
+form input {
+	padding: 5px;
+}
+
+form div {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.form_2_col {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+}
+
+.form_2_col div {
+	width: 100%;
+}
+
+.form_data span {
+	font-weight: bold;
+	text-transform: capitalize;
+}
+
+.form_btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 10px;
+}

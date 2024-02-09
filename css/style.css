@@ -15,7 +15,7 @@ main {
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
-	gap: 50px;
+	gap: 30px;
 }
 
 h1 {
@@ -49,6 +49,8 @@ a {
 	border-radius: 5px;
 	background-color: green;
 	color: white;
+	border: none;
+	cursor: pointer;
 }
 
 .primary_btn:hover {
@@ -59,19 +61,24 @@ a {
 /* --HEADER-- */
 header {
 	background-color: black;
-	max-width: 1000px;
-	margin: 0 auto;
 	color: white;
 }
 
 .header_bandeau {
-	padding: 10px 60px;
 	background-color: green;
-	text-align: center;
 }
 
-.header_main-content {
-	padding: 60px;
+.header_bandeau p {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 10px 60px;
+	text-align: center;	
+}
+
+.header_main-content {	
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 40px 60px;
 	display: flex;
 	justify-content: space-between;
 }
@@ -151,15 +158,13 @@ aside {
 	cursor: pointer;
 }
 
-.form_data span {
-	font-weight: bold;
-	text-transform: capitalize;
-}
-
 
 /* FOOTER*/
 footer {
 	background-color: black;
+}
+
+.footer_content {
 	padding: 60px;
 	max-width: 1000px;
 	margin: 0 auto;
