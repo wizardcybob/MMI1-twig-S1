@@ -1,19 +1,38 @@
 {% extends "base.twig" %}
 
 {% block main %}
-    <p>{{ titre }}</p>
+    <h2>{{ titre }}</h2>
 
-    <form method="post" action="./reception.php">
-        <div>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name">
+
+    {# SHOW DATA FORM #}
+    {% if data_form %}
+    <div>
+        <h3>Affichage des données du formulaire :</h3>
+        <div class="form_data">
+            {% for key,value in data_form %}
+                <p><span>{{ key }} : </span>{{ value }}</p>
+            {% endfor %}
         </div>
-        <div>
-            <label for="description">Description:</label>
-            <textarea id="description" name="description"></textarea>
-        </div>
-        <div>
-            <input type="submit" value="Submit">
-        </div>
-    </form>
+    </div>
+    {% else %}
+    {# FORMULAIRE #}
+    <div> 
+        <h3>Formulaire :</h3>
+        <form method="post" action="./contact.php">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description"></textarea>
+            </div>
+            <div>
+                <input type="submit" value="Envoyer le formulaire">
+            </div>
+        </form>
+    </div>
+    {% endif %}
+
+
 {% endblock main %}

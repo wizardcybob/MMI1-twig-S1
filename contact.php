@@ -14,4 +14,5 @@ $twig = init_twig();
 // Chaque ligne indique 'nom-variable-twig' => valeur-variable-twig
 echo $twig->render('contact.twig', [
 	'titre' => 'Page contact',
+	'data_form' => $_POST,
 ]);

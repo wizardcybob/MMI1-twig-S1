@@ -1,0 +1,11 @@
+{% extends "base.twig" %}
+
+{% block main %}
+
+    <div class="form_data">
+    {% for key,value in data_form %}
+            <p><span>{{ key }} : </span>{{ value }}</p>
+    {% endfor %}
+    </div>
+
+{% endblock main %}
