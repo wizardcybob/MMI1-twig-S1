@@ -1,4 +1,8 @@
 /* GENERAL */
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	background-color: lightgrey;
 	font-family: 'Poppins', sans-serif;
@@ -21,10 +25,19 @@ h1 {
 
 h2 {
 	font-family: 'Protest Riot', sans-serif;
+	line-height: 1;
 	text-align: center;
 	font-weight: bold;
 	font-size: 50px;
 	margin: 40px 0;
+}
+
+h3 {
+	font-family: 'Protest Riot', sans-serif;
+	text-align: center;
+	font-weight: bold;
+	font-size: 25px;
+	margin: 20px 0;
 }
 
 a {
@@ -74,6 +87,7 @@ header {
 	width: 100px;
 }
 
+
 /* MENU */
 nav {
 	display: flex;
@@ -94,26 +108,52 @@ nav {
 	color: white;
 }
 
+
 /* ASIDE */
+aside {
+	background-color: green;
+	min-width: 200px;
+	border-radius: 10px;
+	overflow: hidden;
+}
 
-
-/* MAIN */
 .sous-menu_categorie {
 	display: flex;
 	justify-content: space-around;
+	flex-direction: column;
 }
 
-.sous-menu_categorie li {
-	padding: 10px 5px;
+.sous-menu_categorie li a {
+	padding: 10px 10px;
 	background-color: green;
+	border-bottom: 1px solid white;
+	display: block;
 }
 
-.sous-menu_categorie li:hover {
+.sous-menu_categorie li a:hover {
 	background-color: darkgreen;
+}
+
+
+/* MAIN */
+.wrap {
+	display: flex;
+	gap: 20px;
+}
+
+.child_main {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
 }
 
 .clickable_image {
 	cursor: pointer;
+}
+
+.form_data span {
+	font-weight: bold;
+	text-transform: capitalize;
 }
 
 
@@ -126,6 +166,7 @@ footer {
 	color: white;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 footer span {
