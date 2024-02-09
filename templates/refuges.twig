@@ -1,70 +1,88 @@
-{% extends "base.twig" %}
+{% extends "categorie.twig" %}
 
-{# Ce modèle TWIG étend le modèle 'base.twig' : il contient tous les éléments fixes
-et un bloc main dont le contenu est spécialisé pour afficher un livre #}
 
-{% block main %}
+{# BLOCK ASIDE #}
+{% block aside %}
 
-{% for refuge in all_refuges %}
+<aside>
+	<div>
+		<ul class="sous-menu_categorie">
+			{% for refuge in all_refuges %}
+				<li><a href="#{{ refuge.id }}">{{ refuge.name }}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+</aside>
 
-	{# age calculation #}
-	{% set startDate = refuge.creation %}
-    {% set difference = date(now|date()).diff(date(startDate)) %}
-    {% set refuge_years = difference.y %}  {# y = years #}
+{% endblock aside %}
 
-	<div class="card">
-		<h2>{{ refuge.name }}</h2>
-		{# main presentation #}
-		<div class="card-main_presentation">
-			{# left part -> PHOTO #}
-			{% if refuge.photo %}
-			<div class="card-photo">
-				<img src="{{ refuge.photo }}" alt="{{ refuge.name }}" width="320">
-			</div>
-			{% endif %}
-			{# right part -> card informations #}
-			<div class="card-informations">
-				<ul>
-					{# ALTITUDE #}
-					{% if refuge.altitude %}
-						<li><span>Altitude : </span>{{ refuge.altitude }} m</li>
-					{% endif %}
-					
-					{# COUNTRY #}
-					{% if refuge.country %}
-						<li><span>Pays : </span>{{ refuge.country }}</li>
-					{% endif %}
-					
-					{# CREATION #}
-					{% if refuge.creation %}
-						<li><span>Création : </span>{{ refuge.creation|date("d/m/Y") }}</li>
-					{% endif %}
-					
-					{# AGE #}
-					{% if refuge_years %}
-						<li><span>Nombre d'années d'activité : </span>{{ refuge_years }} ans</li>
-					{% endif %}
-					
-					{# CAPACITY #}
-					{% if refuge.capacity %}
-						<li><span>Capacité : </span>{{ refuge.capacity }} places</li>
-					{% endif %}
-				</ul>
-				<div class="card-informations-footer">
-					{# AGE #}
-					{% if refuge.website %}
-						<a class="primary_btn" href="{{ refuge.website }}" target="_blank">Visiter leur site</a>
-					{% endif %}
+
+
+{# BLOCK CHILD_MAIN #}
+{% block child_main %}
+
+<div class="child_main">
+	{% for refuge in all_refuges %}
+
+		{# age calculation #}
+		{% set startDate = refuge.creation %}
+		{% set difference = date(now|date()).diff(date(startDate)) %}
+		{% set refuge_years = difference.y %}  {# y = years #}
+
+		<div class="card"  id="{{ refuge.id }}">
+			<h2>{{ refuge.name }}</h2>
+			{# main presentation #}
+			<div class="card-main_presentation">
+				{# left part -> PHOTO #}
+				{% if refuge.photo %}
+				<div class="card-photo">
+					<img src="{{ refuge.photo }}" alt="{{ refuge.name }}" width="320">
+				</div>
+				{% endif %}
+				{# right part -> card informations #}
+				<div class="card-informations">
+					<ul>
+						{# ALTITUDE #}
+						{% if refuge.altitude %}
+							<li><span>Altitude : </span>{{ refuge.altitude }} m</li>
+						{% endif %}
+						
+						{# COUNTRY #}
+						{% if refuge.country %}
+							<li><span>Pays : </span>{{ refuge.country }}</li>
+						{% endif %}
+						
+						{# CREATION #}
+						{% if refuge.creation %}
+							<li><span>Création : </span>{{ refuge.creation|date("d/m/Y") }}</li>
+						{% endif %}
+						
+						{# AGE #}
+						{% if refuge_years %}
+							<li><span>Nombre d'années d'activité : </span>{{ refuge_years }} ans</li>
+						{% endif %}
+						
+						{# CAPACITY #}
+						{% if refuge.capacity %}
+							<li><span>Capacité : </span>{{ refuge.capacity }} places</li>
+						{% endif %}
+					</ul>
+					<div class="card-informations-footer">
+						{# AGE #}
+						{% if refuge.website %}
+							<a class="primary_btn" href="{{ refuge.website }}" target="_blank">Visiter leur site</a>
+						{% endif %}
+					</div>
 				</div>
 			</div>
+			{# MAP #}
+			{% if refuge.map %}
+				<div class="card-map">
+					<iframe src="{{ refuge.map }}" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+				</div>
+			{% endif %}
 		</div>
-		{# MAP #}
-		{% if refuge.map %}
-			<div class="card-map">
-				<iframe src="{{ refuge.map }}" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
-			</div>
-		{% endif %}
-	</div>
-{% endfor %}
+	{% endfor %}
+</div>
 
-{% endblock main %}
+{% endblock child_main %}

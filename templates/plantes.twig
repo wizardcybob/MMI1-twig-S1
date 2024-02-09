@@ -1,42 +1,59 @@
-{% extends "base.twig" %}
+{% extends "categorie.twig" %}
 
-{# Ce modèle TWIG étend le modèle 'base.twig' : il contient tous les éléments fixes
-et un bloc main dont le contenu est spécialisé pour afficher un livre #}
 
-{% block main %}
+{# BLOCK ASIDE #}
+{% block aside %}
 
-{% for plante in all_plantes %}
-	<div class="card">
-		<h2>{{ plante.name }}</h2>
-		{# main presentation #}
-		<div class="card-main_presentation">
-			{# left part -> PHOTO #}
-			{% if plante.photo %}
-			<div class="card-photo">
-				<img src="{{ plante.photo }}" alt="{{ plante.name }}" width="320">
-			</div>
-			{% endif %}
-			{# right part -> card informations #}
-			<div class="card-informations">
-				{# DESCRIPRION #}
-				{% if plante.description %}
-					<div> 
-						<p><span>Descritpion : </span></p>
-						<p>{{ plante.description }}</p>
-					</div>
+<aside>
+	<div>
+		<ul class="sous-menu_categorie">
+			{% for plante in all_plantes %}
+				<li><a href="#{{ plante.id }}">{{ plante.name }}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+</aside>
+
+{% endblock aside %}
+
+
+
+{# BLOCK CHILD_MAIN #}
+{% block child_main %}
+
+<div class="child_main">
+	{% for plante in all_plantes %}
+		<div class="card" id="{{ plante.id }}">
+			<h2>{{ plante.name }}</h2>
+			{# main presentation #}
+			<div class="card-main_presentation">
+				{# left part -> PHOTO #}
+				{% if plante.photo %}
+				<div class="card-photo">
+					<img src="{{ plante.photo }}" alt="{{ plante.name }}" width="320">
+				</div>
 				{% endif %}
-				{# CATEGORIES #}
-				{% if plante.categories %}
-				<ul class="card-categories">
-					{% for category in plante.categories %}
-						<li>{{ category }}</li>
-					{% endfor %}
-				</ul>
-				{% endif %}
+				{# right part -> card informations #}
+				<div class="card-informations">
+					{# DESCRIPRION #}
+					{% if plante.description %}
+						<div> 
+							<p><span>Descritpion : </span></p>
+							<p>{{ plante.description }}</p>
+						</div>
+					{% endif %}
+					{# CATEGORIES #}
+					{% if plante.categories %}
+					<ul class="card-categories">
+						{% for category in plante.categories %}
+							<li>{{ category }}</li>
+						{% endfor %}
+					</ul>
+					{% endif %}
+				</div>
 			</div>
 		</div>
-	</div>
-{% endfor %}
+	{% endfor %}
+</div>
 
-
-{% endblock main %}
+{% endblock child_main %}

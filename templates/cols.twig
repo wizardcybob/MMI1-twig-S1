@@ -1,50 +1,68 @@
-{% extends "base.twig" %}
+{% extends "categorie.twig" %}
 
-{# Ce modèle TWIG étend le modèle 'base.twig' : il contient tous les éléments fixes
-et un bloc main dont le contenu est spécialisé pour afficher un livre #}
 
-{% block main %}
+{# BLOCK ASIDE #}
+{% block aside %}
 
-{% for col in all_cols %}
-	<div class="card">
-		<h2>{{ col.name }}</h2>
-		{# main presentation #}
-		<div class="card-main_presentation">
-			{# left part -> PHOTO #}
-			{% if col.photos %}
-				<div class="card-photo-wrapper">
-					{% for photo in col.photos %}
-						<div class="card-photo">
-							<img class="clickable_image" onclick="showImage(this)" src="{{ photo }}" alt="{{ col.name }}" width="320">
-						</div>
-					{% endfor %}
+<aside>
+	<div>
+		<ul class="sous-menu_categorie">
+			{% for col in all_cols %}
+				<li><a href="#{{ col.id }}">{{ col.name }}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+</aside>
+
+{% endblock aside %}
+
+
+
+{# BLOCK CHILD_MAIN #}
+{% block child_main %}
+
+<div class="child_main">
+	{% for col in all_cols %}
+		<div class="card" id="{{ col.id }}">
+			<h2>{{ col.name }}</h2>
+			{# main presentation #}
+			<div class="card-main_presentation">
+				{# left part -> PHOTO #}
+				{% if col.photos %}
+					<div class="card-photo-wrapper">
+						{% for photo in col.photos %}
+							<div class="card-photo">
+								<img class="clickable_image" onclick="showImage(this)" src="{{ photo }}" alt="{{ col.name }}" width="320">
+							</div>
+						{% endfor %}
+					</div>
+				{% endif %}
+				{# right part -> card informations #}
+				<ul class="card-informations">
+					{# ALTITUDE #}
+					{% if col.altitude %}
+						<li><span>Altitude : </span>{{ col.altitude }} m</li>
+					{% endif %}
+					
+					{# COUNTRY #}
+					{% if col.country %}
+						<li><span>Pays : </span>{{ col.country }}</li>
+					{% endif %}
+				</ul>
+			</div>
+			{# MAP #}
+			{% if col.map %}
+				<div class="card-map">
+					<iframe src="{{ col.map }}" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
 				</div>
 			{% endif %}
-			{# right part -> card informations #}
-			<ul class="card-informations">
-				{# ALTITUDE #}
-				{% if col.altitude %}
-					<li><span>Altitude : </span>{{ col.altitude }} m</li>
-				{% endif %}
-				
-				{# COUNTRY #}
-				{% if col.country %}
-					<li><span>Pays : </span>{{ col.country }}</li>
-				{% endif %}
-			</ul>
 		</div>
-		{# MAP #}
-		{% if col.map %}
-			<div class="card-map">
-				<iframe src="{{ col.map }}" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
-			</div>
-		{% endif %}
-	</div>
-{% endfor %}
+	{% endfor %}
+</div>
 
 {# DISPLAY BIG PHOTO ON CLICK #}
-<div class="overlay" onclick="hideImage()"></div>
-<div class="image-overlay"></div> 
+<div class="overlay" onclick="hideImage()" hidden></div>
+<div class="image-overlay" hidden></div> 
 
 <script>
 	function showImage(clickedPhoto) {
@@ -72,4 +90,4 @@ et un bloc main dont le contenu est spécialisé pour afficher un livre #}
 </script>
 
 
-{% endblock main %}
+{% endblock child_main %}

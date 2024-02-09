@@ -3,14 +3,17 @@
 {# Ce modèle TWIG n'a pas de contenu, il crée deux blocs (child_main et aside) vides dans le bloc main.
 Ces deux blocs sont spécialisés dans les modèles fils #}
 {% block main %}
-	{# BLOC 1 -> child_main #}
-	{% block child_main %}
-		<p>Main du deuxième child</p>
-	{% endblock child_main %}
 
-	{# BLOC 2 -> aside #}
-	{% block aside %}
-		<p>Aside</p>
-	{% endblock aside %}
+	<div class="wrap">
+		{# BLOC 1 -> child_main #}
+		{% block child_main %}
+
+		{% endblock child_main %}
+
+		{# BLOC 2 -> aside #}
+		{% block aside %}
+	
+		{% endblock aside %}
+	</div>
 
 {% endblock main %}

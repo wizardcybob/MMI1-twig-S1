@@ -1,46 +1,53 @@
-{% extends "base.twig" %}
-
-{# Ce modèle TWIG étend le modèle 'base.twig' : il contient tous les éléments fixes
-et un bloc main dont le contenu est spécialisé pour afficher un livre #}
-
-{% block main %}
+{% extends "categorie.twig" %}
 
 
-<div>
-	<ul class="sous-menu_categorie">
-        {% for animal in all_animals %}
-            <li><a href="#{{ animal.id }}">{{ animal.name }}</a></li>
-        {% endfor %}
-    </ul>
+{# BLOCK ASIDE #}
+{% block aside %}
+
+<aside>
+	<div>
+		<ul class="sous-menu_categorie">
+			{% for animal in all_animals %}
+				<li><a href="#{{ animal.id }}">{{ animal.name }}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+</aside>
+
+{% endblock aside %}
+
+
+
+{# BLOCK CHILD_MAIN #}
+{% block child_main %}
+
+<div class="child_main">
+	{% for animal in all_animals %}
+		<div class="card" id="{{ animal.id }}">
+			<h2>{{ animal.name }}</h2>
+			{# main presentation #}
+			<div class="card-main_presentation">
+				{# left part -> PHOTO #}
+				{% if animal.photo %}
+				<div class="card-photo">
+					<img src="{{ animal.photo }}" alt="{{ animal.name }}" width="320">
+				</div>
+				{% endif %}
+				{# right part -> card informations #}
+				<ul class="card-informations">
+					{# HABITAT #}
+					{% if animal.habitat %}
+						<li><span>Habitat : </span>{{ animal.habitat }}</li>
+					{% endif %}
+					
+					{# DESCRIPRION #}
+					{% if animal.description %}
+						<li><span>Descritpion : </span><p>{{ animal.description }}</p></li>
+					{% endif %}
+				</ul>
+			</div>
+		</div>
+	{% endfor %}
 </div>
 
-{% for animal in all_animals %}
-	<div class="card" id="{{ animal.id }}">
-		<h2>{{ animal.name }}</h2>
-		{# main presentation #}
-		<div class="card-main_presentation">
-			{# left part -> PHOTO #}
-			{% if animal.photo %}
-			<div class="card-photo">
-				<img src="{{ animal.photo }}" alt="{{ animal.name }}" width="320">
-			</div>
-			{% endif %}
-			{# right part -> card informations #}
-			<ul class="card-informations">
-				{# HABITAT #}
-				{% if animal.habitat %}
-					<li><span>Habitat : </span>{{ animal.habitat }}</li>
-				{% endif %}
-				
-				{# DESCRIPRION #}
-				{% if animal.description %}
-					<li><span>Descritpion : </span><p>{{ animal.description }}</p></li>
-				{% endif %}
-			</ul>
-			<a href="#{{ animal.look_id }}">{{ animal.look_name }}</a>
-		</div>
-	</div>
-{% endfor %}
-
-
-{% endblock main %}
+{% endblock child_main %}
