@@ -66,9 +66,6 @@ $col_grand_ferret = [
     'altitude' => 2537,
     'photos' => [
         './images/cols/col_ferret1.jpg',
-        './images/cols/col_ferret2.jpg',
-        './images/cols/col_ferret3.jpg',
-        './images/cols/col_ferret4.jpg',
     ],
 ];
 

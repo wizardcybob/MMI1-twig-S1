@@ -43,32 +43,15 @@ et un bloc main dont le contenu est spécialisé pour afficher un livre #}
 
 	<section class="galerie">
 		<h2>Galerie</h2>
+		{# DISPLAY PHOTOS #}
 		<div class="photos_area">
-			<div>
-				<img class="clickable_image" onclick="showImage(this)" src="./images/random/random1.jpg" alt="image TMB">
-			</div>
-			<div>
-				<img class="clickable_image" onclick="showImage(this)" src="./images/random/random2.jpg" alt="image TMB">
-			</div>
-			<div>
-				<img class="clickable_image" onclick="showImage(this)" src="./images/random/random3.jpg" alt="image TMB">
-			</div>
-			<div>
-				<img class="clickable_image" onclick="showImage(this)" src="./images/random/random4.jpg" alt="image TMB">
-			</div>
-			<div>
-				<img class="clickable_image" onclick="showImage(this)" src="./images/random/random5.jpg" alt="image TMB">
-			</div>
-			<div>
-				<img class="clickable_image" onclick="showImage(this)" src="./images/random/random6.jpg" alt="image TMB">
-			</div>
-			<div>
-				<img class="clickable_image" onclick="showImage(this)" src="./images/random/random7.jpg" alt="image TMB">
-			</div>
-			<div>
-				<img class="clickable_image" onclick="showImage(this)" src="./images/random/random8.jpg" alt="image TMB">
-			</div>
+			{% for i in range(1, total_images) %}
+				<div>
+					<img class="clickable_image" onclick="showImage(this)" src="./images/random/random{{ i }}.jpg" alt="image TMB">
+				</div>
+			{% endfor %}
 		</div>
+		{# DISPLAY VIDEO #}
 		<div class="galerie_video">
 			<iframe width="560" height="315" src="https://www.youtube.com/embed/CMqYaZAdFpQ?si=qoTu8iO_0H6uH0Ru" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 		</div>

@@ -37,8 +37,8 @@ section.statistiques > div > * {
 /* ----GALERIE---- */
 section.galerie .photos_area {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 colonnes égales */
-    gap: 10px;
+    grid-template-columns: repeat(8, 1fr); /* 6 colonnes égales */
+    gap: 5px;
     margin: 20px 0;
 }
 

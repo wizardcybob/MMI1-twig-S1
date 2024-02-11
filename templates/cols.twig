@@ -29,7 +29,7 @@
 			<div class="card-main_presentation">
 				{# left part -> PHOTO #}
 				{% if col.photos %}
-					<div class="card-photo-wrapper">
+					<div class="card-photo-wrapper {% if col.photos|length == 1 %}single-image{% endif %}">
 						{% for photo in col.photos %}
 							<div class="card-photo">
 								<img class="clickable_image" onclick="showImage(this)" src="{{ photo }}" alt="{{ col.name }}" width="320">

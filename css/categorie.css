@@ -20,11 +20,20 @@
 	padding: 10px;
 }
 
+/* ----SEVERAL PHOTOS---- */
 .card-photo-wrapper {
-	display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Deux colonnes égales */
-    gap: 5px; /* Espacement entre les éléments de la grille */
+    display: grid;
+    gap: 5px;
 }
+
+.single-image {
+    grid-template-columns: 1fr;
+}
+
+.card-photo-wrapper:not(.single-image) {
+    grid-template-columns: repeat(2, 1fr);
+}
+/* ----END SEVERAL PHOTOS---- */
 
 .card-photo {
 	overflow: hidden;
