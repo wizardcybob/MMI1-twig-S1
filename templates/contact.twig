@@ -10,11 +10,17 @@
         <div>
             <h3>Affichage des données du formulaire :</h3>
             <div class="form_data">
-                {% for key,value in data_form %}
-                    <p><span>{{ key }} : </span>{{ value }}</p>
+                {% for key, value in data_form %}
+                    {% if key == 'photo' %}
+                        <p><span>{{ key }} : </span><img src="/images/uploads/{{ value }}" alt="{{ value }}"></p>
+                    {% else %}
+                        <p><span>{{ key }} : </span>{{ value }}</p>
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>
+
+
         {% else %}
         {# FORMULAIRE #}
         <div> 
@@ -37,6 +43,10 @@
                 <div>
                     <label for="description">Message :</label>
                     <textarea id="description" name="description" rows="5" cols="33" required></textarea>
+                </div>
+                <div>
+                    <label for="photo">Choisir une photo :</label>
+                    <input type="file" id="photo" name="photo" accept="image/*" required>
                 </div>
                 <div class="form_btn">
                     <input type="submit" class="primary_btn" value="Envoyer le formulaire">
