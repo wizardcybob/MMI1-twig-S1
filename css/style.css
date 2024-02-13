@@ -4,18 +4,10 @@ html {
 }
 
 body {
-	background-color: lightgrey;
+	background-color: rgb(2, 32, 9);
+	color: white;
 	font-family: 'Poppins', sans-serif;
 	line-height: 1.3em;
-}
-
-main {
-	max-width: 960px;
-	padding: 50px 20px;
-	margin: 0 auto;
-	display: flex;
-	flex-direction: column;
-	gap: 30px;
 }
 
 h1 {
@@ -71,7 +63,8 @@ header {
 .header_bandeau p {
 	max-width: 1000px;
 	margin: 0 auto;
-	padding: 10px 60px;
+	padding: 5px 60px;
+	font-size: 12px;
 	text-align: center;	
 }
 
@@ -118,7 +111,7 @@ nav {
 
 /* ASIDE */
 aside {
-	background-color: green;
+	background-color: black;
 	min-width: 200px;
 	border-radius: 10px;
 	overflow: hidden;
@@ -143,7 +136,16 @@ aside {
 
 
 /* MAIN */
-.wrap {
+.main {
+	max-width: 960px;
+	padding: 50px 20px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.wrap_categorie {
 	display: flex;
 	gap: 20px;
 }
@@ -152,6 +154,25 @@ aside {
 	display: flex;
 	flex-direction: column;
 	gap: 40px;
+}
+
+.deux_col {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 60px;
+}
+
+.deux_col div {
+	width: calc((100% - 60px)/2);
+}
+
+.deux_col img {
+	width: 100%;
+}
+
+.deux_col p {
+	margin-bottom: 10px;
 }
 
 .clickable_image {

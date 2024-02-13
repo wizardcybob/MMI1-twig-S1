@@ -1,11 +1,52 @@
 /* --ACCUEIL-- */
+.home_section {
+	height: calc(100vh - 150px);
+	padding: 0 200px;
+	background-image: 
+		linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), /* Dégradé vers le haut */
+		linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), /* Dégradé vers le bas */
+		url('https://www.appartementcourchevel.com/wp-content/uploads/2022/06/montagne.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.home_section h2 {
+	color: aliceblue;
+	font-size: 60px;
+}
+
+.home_section img {
+    width: 500px;
+}
+
+.home_section p {
+	text-align: center;
+}
+
+.home_section .home_section_photo {
+	height: 300px;
+	background-color: red;
+	background-image: url("./../images/start.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	mask-image: url("./../images/montagne.png");
+	mask-size: contain;
+	mask-repeat: no-repeat;
+	mask-position: center;
+}
+
 /* ----DESCRIPTION---- */
 section.description ul {
-    width: 800px;
     margin: 10px auto 0;
 }
 section.description li {
     list-style: disc;
+	margin-bottom: 10px;
+}
+
+section.description .deux_col div:last-child {
+    width: 70%;
 }
 
 /* ----STATISTIQUES---- */
@@ -22,6 +63,10 @@ section.statistiques > div {
 
 section.statistiques > div > * {
     width: 50%;
+}
+
+section.statistiques li {
+    margin-bottom: 20px;
 }
 
 .statistiques_image {
