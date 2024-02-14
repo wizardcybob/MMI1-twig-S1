@@ -12,15 +12,23 @@
 form {
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+	gap: 30px;
 }
 
 form label {
 	font-weight: bold;
 }
 
-form input {
-	padding: 5px;
+form input,
+form textarea {
+	color: white;
+	padding: 8px 10px;
+	min-height: 20px;
+	background-color: transparent;
+	border: 1px solid green;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom: 4px solid green;
 }
 
 form div {
