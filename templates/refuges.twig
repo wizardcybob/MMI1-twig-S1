@@ -29,7 +29,7 @@
 		{% set difference = date(now|date()).diff(date(startDate)) %}
 		{% set refuge_years = difference.y %}  {# y = years #}
 
-		<div class="card"  id="{{ refuge.id }}">
+		<div class="card"  id="{{ refuge.id }}" data-aos="zoom-in-down" data-aos-duration="800" data-aos-anchor-placement="top-bottom">
 			<h2>{{ refuge.name }}</h2>
 			{# main presentation #}
 			<div class="card-main_presentation">

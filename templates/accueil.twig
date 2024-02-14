@@ -6,7 +6,7 @@ et un bloc main dont le contenu est spécialisé pour afficher un livre #}
 {% block main %}
 	<section>
 		<div class="home_section deux_col">
-			<div class="home_section_photo"></div>
+			<div class="home_section_photo" data-aos="zoom-in" data-aos-duration="1500" data-aos-anchor-placement="top-bottom"></div>
 			<div>
 				<h2>Le Tour du Mont Blanc</h2>
 				<p>Bienvenue sur le site dédié au Tour du Mont Blanc (TMB), une aventure de randonnée exceptionnelle à travers les Alpes.</p>
@@ -18,10 +18,10 @@ et un bloc main dont le contenu est spécialisé pour afficher un livre #}
 		<section class="description">
 			<h2>Description</h2>
 			<div class="deux_col">
-				<div>
+				<div data-aos="fade-down-right" data-aos-duration="1500" data-aos-anchor-placement="top-bottom">
 					<img src="./images/montagne.png" alt="">
 				</div>
-				<div>
+				<div data-aos="fade-up-left" data-aos-duration="1500" data-aos-anchor-placement="top-bottom">
 					<p>Le Tour du Mont Blanc est l'un des sentiers de grande randonnée les plus emblématiques du monde, offrant une boucle panoramique à travers la France, l'Italie, et la Suisse. Cette aventure de plusieurs jours vous conduit à travers des paysages spectaculaires, des cols alpins, des vallées verdoyantes, et des villages pittoresques.</p>
 					<p>Découvrez la diversité culturelle, la faune et la flore uniques de la région alpine tout en marchant autour du majestueux Mont Blanc.</p>
 					<h3>Les caractéristiques qui font du TMB une expérience unique en son genre :</h3>
@@ -38,7 +38,7 @@ et un bloc main dont le contenu est spécialisé pour afficher un livre #}
 		<section class="statistiques">
 			<h2>Statistiques clés</h2>
 			<div>
-				<ul>
+				<ul data-aos="fade-down-right" data-aos-duration="1500" data-aos-anchor-placement="top-bottom">
 					<li><span>Nombre de kilimètres :</span> 170 km</li>
 					<li><span>Dénivelé :</span> 10 000 m</li>
 					<li><span>Altitude maximale :</span> ~2700 mètres</li>
@@ -47,7 +47,7 @@ et un bloc main dont le contenu est spécialisé pour afficher un livre #}
 					<li><span>Difficulté :</span> un peu difficile</li>
 					<li><span>Départ / arrivée :</span> Les Houches (France)</li>
 				</ul>
-				<div class="statistiques_image">
+				<div class="statistiques_image" data-aos="fade-up-left" data-aos-duration="1500" data-aos-anchor-placement="top-bottom">
 					<img class="clickable_image" onclick="showImage(this)" src="./images/carte.jpeg" alt="carte TMB">
 				</div>
 			</div>
@@ -58,7 +58,7 @@ et un bloc main dont le contenu est spécialisé pour afficher un livre #}
 			{# DISPLAY PHOTOS #}
 			<div class="photos_area">
 				{% for i in range(1, total_images) %}
-					<div>
+					<div data-aos="flip-left" data-aos-duration="1500" data-aos-anchor-placement="top-bottom">
 						<img class="clickable_image" onclick="showImage(this)" src="./images/random/random{{ i }}.jpg" alt="image TMB">
 					</div>
 				{% endfor %}
