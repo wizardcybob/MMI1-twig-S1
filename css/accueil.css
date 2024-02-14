@@ -45,11 +45,12 @@ section.description li {
 	margin-bottom: 10px;
 }
 
-section.description .deux_col div:last-child {
-    width: 70%;
+/* ----STATISTIQUES---- */
+section.statistiques {
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-/* ----STATISTIQUES---- */
 section.statistiques span {
     font-weight: bold;
 }
