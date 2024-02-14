@@ -13,9 +13,9 @@
                 <h3>Affichage des données du formulaire :</h3>
                 <div class="form_data">
                     {% for key, value in data_form %}
-                        {% if key == 'photo' %}
+                        {% if value and key == 'photo' %}
                             <p><span>{{ key }} : </span><img src="/images/uploads/{{ value }}" alt="{{ value }}"></p>
-                        {% else %}
+                        {% elseif value %}
                             <p><span>{{ key }} : </span>{{ value }}</p>
                         {% endif %}
                     {% endfor %}
@@ -48,7 +48,7 @@
                     </div>
                     <div>
                         <label for="photo">Choisir une photo :</label>
-                        <input type="file" id="photo" name="photo" accept="image/*" required>
+                        <input type="file" id="photo" name="photo" accept="image/*">
                     </div>
                     <div class="form_btn">
                         <input type="submit" class="primary_btn" value="Envoyer le formulaire">
