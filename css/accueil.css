@@ -3,11 +3,12 @@
 	height: calc(100vh - 150px);
 	padding: 0 200px;
 	background-image: 
-		linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), /* Dégradé vers le haut */
-		linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), /* Dégradé vers le bas */
+		linear-gradient(to top, #000000b3, rgba(0, 0, 0, 0)), /* gradient to top */
+		linear-gradient(to bottom, rgba(0, 0, 0, 1) 150px, rgba(0, 0, 0, 0)), /* gradient to bottom, starting at 150px if background fixed*/
 		url('https://www.appartementcourchevel.com/wp-content/uploads/2022/06/montagne.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
+    background-attachment: fixed;
 }
 
 .home_section h2 {
