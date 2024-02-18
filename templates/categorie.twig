@@ -2,6 +2,13 @@
 
 {# Ce modèle TWIG n'a pas de contenu, il crée deux blocs (child_main et aside) vides dans le bloc main.
 Ces deux blocs sont spécialisés dans les modèles fils #}
+
+
+{% block ccs_page %}
+	<link rel="stylesheet" href="css/categorie.css">
+{% endblock %}
+
+
 {% block main %}
 	<section class="main">
 		<div class="wrap_categorie">
