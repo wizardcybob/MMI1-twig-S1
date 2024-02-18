@@ -30,7 +30,7 @@
 
 <body>
 	{# HEADER #}
-	<header>
+	<header role="banner">
 		<div class="header_bandeau">
 			<p>Site d'exemple dans le cadre de la formation du BUT MMI.</p>
 		</div>
@@ -41,7 +41,7 @@
 				<h1>TMB site</h1>
 			</div>
 			{# MENU présent dans toutes les pages héritant (extends) de ce modèle #}
-			<nav>
+			<nav role="navigation">
 				<ul class="header_menu">
 					<li>
 						<a href="index.php">Accueil</a>
@@ -68,7 +68,7 @@
 
 
 	{# MAIN #}
-	<main>
+	<main role="main">
 		{# Ceci est un commentaire en TWIG #}
 		{# La ligne ci-dessous définit un bloc TWIG avec un contenu par défault.
 		On peut spécialiser dans les modèles fils en remplaçant le contenu par un autre #}
@@ -79,7 +79,7 @@
 	</main>
 
 	{# FOOTER #}
-	<footer>
+	<footer role="contentinfo">
 		{# CUSTOM SHAPE DIVIDER #}
 		<div class="custom-shape-divider-top">
 			<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
