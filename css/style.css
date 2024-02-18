@@ -183,6 +183,28 @@ aside {
 /* FOOTER*/
 footer {
 	background-color: black;
+	position: relative;
+	padding-top: 100px;
+}
+
+.custom-shape-divider-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top svg {
+    position: relative;
+    display: block;
+    width: calc(151% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-top .shape-fill {
+    fill: rgb(2, 32, 9);
 }
 
 .footer_content {
