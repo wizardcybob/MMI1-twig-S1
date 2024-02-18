@@ -119,7 +119,8 @@ aside .fixed_aside_list {
 .card-informations .card-categories li {
     padding: 5px 20px;
     border-radius: 25px;
-    background-color: lightgreen;
+    background-color: rgb(2, 51, 2);
+	backdrop-filter: blur(2px);
 }
 
 .card-informations-footer {
