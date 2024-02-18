@@ -77,9 +77,12 @@ et un bloc main dont le contenu est spécialisé pour afficher un livre #}
 		{# DISPLAY BIG PHOTO ON CLICK #}
 		<div class="overlay" onclick="hideImage()" hidden></div>
 		<div class="image-overlay" hidden></div> 
-
-		<script src="./js/clickable_image.js"></script>
 	</section>
 
 
 {% endblock main %}
+
+
+{% block javascript %}
+	<script src="./js/clickable_image.js"></script>
+{% endblock %}
