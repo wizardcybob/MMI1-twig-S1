@@ -3,6 +3,10 @@
 {# Ce modèle TWIG étend le modèle 'base.twig' : il contient tous les éléments fixes
 et un bloc main dont le contenu est spécialisé pour afficher un livre #}
 
+{% block title %}
+	{{ title_page }}
+{% endblock %}
+
 {% block main %}
 	<section>
 		<div class="home_section deux_col">

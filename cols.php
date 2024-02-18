@@ -15,4 +15,5 @@ include('include/data2-cols.php');
 // Chaque ligne indique 'nom-variable-twig' => valeur-variable-twig
 echo $twig->render('cols.twig', [
 	'all_cols' => $cols_data,
+	'title_page' => 'Cols',
 ]);

@@ -15,5 +15,6 @@ include('include/data4-plantes.php');
 // Le second paramètre est un tableau contenant les variables envoyées au modèle Twig
 // Chaque ligne indique 'nom-variable-twig' => valeur-variable-twig
 echo $twig->render('plantes.twig', [
+	'title_page' => 'Plantes',
 	'all_plantes' => $plantes_data,
 ]);

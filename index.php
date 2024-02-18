@@ -17,7 +17,7 @@ $totalImages = count(glob($imageDirectory . "*.{jpg,JPG,jpeg,JPEG,png,PNG,gif,GI
 // Le second paramètre est un tableau contenant les variables envoyées au modèle Twig
 // Chaque ligne indique 'nom-variable-twig' => valeur-variable-twig
 	echo $twig->render('accueil.twig', [
-		'titre' => 'Page d\'accueil',
+		'title_page' => 'Accueil',
 		'total_images' => $totalImages, // Ajout de la variable total_images
 	]);
 	
