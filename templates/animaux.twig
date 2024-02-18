@@ -5,12 +5,15 @@
 {% block aside %}
 
 <aside>
-	<div>
-		<ul class="sous-menu_categorie">
-			{% for animal in all_animals %}
-				<li><a href="#{{ animal.id }}">{{ animal.name }}</a></li>
-			{% endfor %}
-		</ul>
+	<div class="fixed_aside">
+		<h3>Liste des animaux&nbsp;:</h3>
+		<div class="fixed_aside_list">
+			<ul class="sous-menu_categorie">
+				{% for animal in all_animals %}
+					<li><a href="#{{ animal.id }}">{{ animal.name }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
 	</div>
 </aside>
 

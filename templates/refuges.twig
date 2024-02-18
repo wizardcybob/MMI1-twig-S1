@@ -5,12 +5,15 @@
 {% block aside %}
 
 <aside>
-	<div>
-		<ul class="sous-menu_categorie">
-			{% for refuge in all_refuges %}
-				<li><a href="#{{ refuge.id }}">{{ refuge.name }}</a></li>
-			{% endfor %}
-		</ul>
+	<div class="fixed_aside">
+		<h3>Liste des refuges&nbsp;:</h3>
+		<div class="fixed_aside_list">
+			<ul class="sous-menu_categorie">
+				{% for refuge in all_refuges %}
+					<li><a href="#{{ refuge.id }}">{{ refuge.name }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
 	</div>
 </aside>
 

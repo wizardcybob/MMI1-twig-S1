@@ -46,7 +46,7 @@ $refuge_miage = [
     'country' => 'France',
     'altitude' => 1559,
     'creation' => '07/12/1926', // m/d/Y -> help for age calculation
-    'photo' => './images/refuges/torino.jpg',
+    'photo' => './images/refuges/miage.jpg',
     'capacity' => 50,
 ];
 

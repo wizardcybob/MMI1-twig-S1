@@ -1,11 +1,25 @@
 /* ASIDE */
 aside {
 	min-width: 200px;
+	position: relative;
 }
 
-aside > div {
+aside h3 {
+	font-size: 18px;
+}
+
+.fixed_aside {
+	width: 100%;
+	max-width: 200px;
+	position: fixed;
+	transition: all 0.5s ease;
+}
+
+aside .fixed_aside_list {
 	border-radius: 10px;
 	overflow: hidden;
+	max-height: 300px;
+	overflow-y: auto;
 }
 
 .sous-menu_categorie {
@@ -55,6 +69,11 @@ aside > div {
 .card-photo-wrapper {
     display: grid;
     gap: 5px;
+	width: fit-content;
+}
+
+.card-photo-wrapper div {
+	width: 100px;
 }
 
 .single-image {

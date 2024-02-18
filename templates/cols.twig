@@ -5,12 +5,15 @@
 {% block aside %}
 
 <aside>
-	<div>
-		<ul class="sous-menu_categorie">
-			{% for col in all_cols %}
-				<li><a href="#{{ col.id }}">{{ col.name }}</a></li>
-			{% endfor %}
-		</ul>
+	<div class="fixed_aside">
+		<h3>Liste des cols&nbsp;:</h3>
+		<div class="fixed_aside_list">
+			<ul class="sous-menu_categorie">
+				{% for col in all_cols %}
+					<li><a href="#{{ col.id }}">{{ col.name }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
 	</div>
 </aside>
 
