@@ -15,8 +15,31 @@ form {
 	gap: 30px;
 }
 
+form div {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	position: relative;
+}
+
+.form_2_col {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+}
+
+.form_2_col div {
+	width: 100%;
+}
+
 form label {
 	font-weight: bold;
+	position: absolute;
+	inset: 10px;
+	width: fit-content;
+	height: fit-content;
+	transition: all 0.3s ease;
 }
 
 form input,
@@ -31,27 +54,33 @@ form textarea {
 	border-bottom: 4px solid green;
 }
 
-form div {
-	display: flex;
-	flex-direction: column;
-	gap: 4px;
+form textarea {
+	max-width: calc(100% - 20px); /* 20px = padding */
 }
 
-.form_2_col {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	gap: 10px;
+form input::placeholder,
+form textarea::placeholder {
+	opacity: 0;
+	color: grey;
 }
 
-.form_2_col div {
-	width: 100%;
+form input:focus,
+form textarea:focus {
+	outline: none;
 }
 
-.form_data span {
-	font-weight: bold;
-	text-transform: capitalize;
+input:focus + label,
+textarea:focus + label,
+.floated_yet {
+	transform: translateY(-20px);
+	font-size: 12px;
+	background-color: rgb(1, 22, 6);
+	padding: 0 10px;
+}
+
+form input:focus::placeholder,
+form textarea:focus::placeholder {
+	opacity: 1;
 }
 
 .form_btn {
@@ -59,4 +88,10 @@ form div {
 	align-items: center;
 	justify-content: center;
 	margin-top: 10px;
+}
+
+/* ----displaying data---- */
+.form_data span {
+	font-weight: bold;
+	text-transform: capitalize;
 }
