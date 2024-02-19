@@ -46,17 +46,22 @@
 					</div>
 				{% endif %}
 				{# right part -> card informations #}
-				<ul class="card-informations">
-					{# ALTITUDE #}
-					{% if col.altitude %}
-						<li><span>Altitude : </span>{{ col.altitude }} m</li>
-					{% endif %}
-					
-					{# COUNTRY #}
-					{% if col.country %}
-						<li><span>Pays : </span>{{ col.country }}</li>
-					{% endif %}
-				</ul>
+				<div class="container_effect">
+					<div class="card-informations card-informations_effect">
+						<h3>Détails</h3>
+						<ul class="card-informations-details">
+							{# ALTITUDE #}
+							{% if col.altitude %}
+								<li><span>Altitude : </span>{{ col.altitude }} m</li>
+							{% endif %}
+							
+							{# COUNTRY #}
+							{% if col.country %}
+								<li><span>Pays : </span>{{ col.country }}</li>
+							{% endif %}
+						</ul>
+					</div>
+				</div>
 			</div>
 			{# MAP #}
 			{% if col.map %}

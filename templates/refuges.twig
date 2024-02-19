@@ -48,38 +48,41 @@
 				</div>
 				{% endif %}
 				{# right part -> card informations #}
-				<div class="card-informations">
-					<ul>
-						{# ALTITUDE #}
-						{% if refuge.altitude %}
-							<li><span>Altitude : </span>{{ refuge.altitude }} m</li>
-						{% endif %}
-						
-						{# COUNTRY #}
-						{% if refuge.country %}
-							<li><span>Pays : </span>{{ refuge.country }}</li>
-						{% endif %}
-						
-						{# CREATION #}
-						{% if refuge.creation %}
-							<li><span>Création : </span>{{ refuge.creation|date("d/m/Y") }}</li>
-						{% endif %}
-						
-						{# AGE #}
-						{% if refuge_years %}
-							<li><span>Nombre d'années d'activité : </span>{{ refuge_years }} ans</li>
-						{% endif %}
-						
-						{# CAPACITY #}
-						{% if refuge.capacity %}
-							<li><span>Capacité : </span>{{ refuge.capacity }} places</li>
-						{% endif %}
-					</ul>
-					<div class="card-informations-footer">
-						{# AGE #}
-						{% if refuge.website %}
-							<a class="primary_btn" href="{{ refuge.website }}" target="_blank">Visiter leur site</a>
-						{% endif %}
+				<div class="container_effect">
+					<div class="card-informations card-informations_effect">
+						<h3>Détails</h3>
+						<ul class="card-informations-details">
+							{# ALTITUDE #}
+							{% if refuge.altitude %}
+								<li><span>Altitude : </span>{{ refuge.altitude }} m</li>
+							{% endif %}
+							
+							{# COUNTRY #}
+							{% if refuge.country %}
+								<li><span>Pays : </span>{{ refuge.country }}</li>
+							{% endif %}
+							
+							{# CREATION #}
+							{% if refuge.creation %}
+								<li><span>Création : </span>{{ refuge.creation|date("d/m/Y") }}</li>
+							{% endif %}
+							
+							{# AGE #}
+							{% if refuge_years %}
+								<li><span>Nombre d'années d'activité : </span>{{ refuge_years }} ans</li>
+							{% endif %}
+							
+							{# CAPACITY #}
+							{% if refuge.capacity %}
+								<li><span>Capacité : </span>{{ refuge.capacity }} places</li>
+							{% endif %}
+						</ul>
+						<div class="card-informations-footer">
+							{# AGE #}
+							{% if refuge.website %}
+								<a class="primary_btn" href="{{ refuge.website }}" target="_blank">Visiter leur site</a>
+							{% endif %}
+						</div>
 					</div>
 				</div>
 			</div>

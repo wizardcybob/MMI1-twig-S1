@@ -6,11 +6,12 @@ Ces deux blocs sont spécialisés dans les modèles fils #}
 
 {% block ccs_page %}
 	<link rel="stylesheet" href="css/categorie.css">
+	<link rel="stylesheet" href="css/card_effect.css">
 {% endblock %}
 
 
 {% block main %}
-	<section class="main">
+	<section class="main">		
 		<div class="wrap_categorie">
 			{# BLOC 1 -> child_main #}
 			{% block child_main %}
@@ -29,4 +30,5 @@ Ces deux blocs sont spécialisés dans les modèles fils #}
 
 {% block javascript %}
 	<script src="./js/aside.js"></script>
+	<script src="./js/card_effect.js"></script>
 {% endblock %}

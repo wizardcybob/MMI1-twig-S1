@@ -40,17 +40,22 @@
 				</div>
 				{% endif %}
 				{# right part -> card informations #}
-				<ul class="card-informations">
-					{# HABITAT #}
-					{% if animal.habitat %}
-						<li><span>Habitat : </span>{{ animal.habitat }}</li>
-					{% endif %}
-					
-					{# DESCRIPRION #}
-					{% if animal.description %}
-						<li><span>Descritpion : </span><p>{{ animal.description }}</p></li>
-					{% endif %}
-				</ul>
+				<div class="container_effect">
+					<div class="card-informations card-informations_effect">
+						<h3>Détails</h3>
+						<ul class="card-informations-details">
+							{# HABITAT #}
+							{% if animal.habitat %}
+								<li><span>Habitat : </span>{{ animal.habitat }}</li>
+							{% endif %}
+							
+							{# DESCRIPRION #}
+							{% if animal.description %}
+								<li><span>Descritpion : </span><p>{{ animal.description }}</p></li>
+							{% endif %}
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
 	{% endfor %}
