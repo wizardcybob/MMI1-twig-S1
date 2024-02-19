@@ -49,7 +49,25 @@ aside .fixed_aside_list {
 	background-color: rgba(0, 0, 0, 0.387);
 	border-radius: 10px;
 	padding: 20px;
+	overflow: hidden;
 }
+
+/* .container_effect::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 30%;
+	height: 100%;
+	background: linear-gradient(lightgreen, darkgreen);
+	clip-path: circle(32.58% at 80.50% 53.21%);
+	/* mask-image: url("./../images/montagne.png");
+	mask-size: contain;
+	mask-repeat: no-repeat;
+	mask-position: center;
+	transform: translate(400px, 250px) scaleX(-1); */
+	/* z-index: -100;
+} */
 
 .card-main_presentation {
 	display: flex;
