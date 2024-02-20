@@ -77,8 +77,14 @@ section.statistiques li {
     justify-content: center;
 }
 
-.statistiques_image img {
+.statistiques_image .clickable_image {
     width: 70%;
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+.statistiques_image:hover .clickable_image {
+    transform: scale(1.05);
 }
 
 /* ----GALERIE---- */
@@ -93,8 +99,15 @@ section.galerie .photos_area {
     overflow: hidden;
 }
 
-.photos_area div img {
+.photos_area div .clickable_image {
     width: 100%;
+    height: 100%;
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+.photos_area div:hover .clickable_image {
+    transform: scale(1.2);
 }
 
 .galerie_video {
