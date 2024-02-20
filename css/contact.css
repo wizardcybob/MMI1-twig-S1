@@ -51,7 +51,15 @@ form textarea {
 	border: 1px solid var(--main-color);
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
-	border-bottom: 4px solid var(--main-color);
+	/* border-bottom: 4px solid var(--main-color); */
+}
+
+form input:not(.primary_btn),
+form textarea {
+	background-image: linear-gradient(to right, lightgreen, darkgreen);
+	background-size: 100% 3px;
+	background-repeat: no-repeat;
+	background-position: bottom;
 }
 
 form textarea {
