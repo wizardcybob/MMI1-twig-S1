@@ -22,6 +22,7 @@
 
 .home_section p {
 	text-align: center;
+    color: var(--white);
 }
 
 .home_section .home_section_photo {

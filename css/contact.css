@@ -56,7 +56,7 @@ form textarea {
 
 form input:not(.primary_btn),
 form textarea {
-	background-image: linear-gradient(to right, lightgreen, darkgreen);
+	background-image: linear-gradient(to right, var(--main-color-light), var(--main-color-dark));
 	background-size: 100% 2px;
 	background-repeat: no-repeat;
 	background-position: bottom;

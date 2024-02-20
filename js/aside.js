@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var asideElement = document.querySelector('aside');
     var fixed_asideElement = document.querySelector('.fixed_aside');
 
     window.addEventListener('scroll', function() {
