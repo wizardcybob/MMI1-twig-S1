@@ -6,8 +6,9 @@
 }
 
 .container_effect .card-informations_effect {
-    position: relative;
+    height: 100%;
     overflow: hidden;
+    position: relative;
     border-top: 2px solid rgb(255,255,255,0.5);
     border-left: 2px solid rgb(255,255,255,0.5);
     box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
@@ -15,6 +16,10 @@
     background:rgba(255,255,255,0.1);
     backdrop-filter: blur(5px);
 }
+
+/* .container_effect .card-informations_effect:hover {
+    overflow-y: scroll; // warning : it\'s displayed even when there is few texts while hovering
+} */
 
 .container_effect .card-informations_effect:before {
     content: "?";

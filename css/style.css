@@ -190,6 +190,7 @@ nav {
 
 .clickable_image {
 	cursor: pointer;
+	width: 100%;
 }
 
 

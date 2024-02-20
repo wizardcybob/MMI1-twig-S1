@@ -16,13 +16,13 @@ aside h3 {
 }
 
 aside .fixed_aside_list {
-	border-radius: 10px;
-	overflow: hidden;
 	max-height: 300px;
 	overflow-y: auto;
 }
 
 .sous-menu_categorie {
+	border-radius: 5px;
+	overflow: hidden;
 	display: flex;
 	justify-content: space-around;
 	flex-direction: column;
@@ -80,6 +80,10 @@ aside .fixed_aside_list {
 	width: calc((100% - 20px)/2);
 }
 
+.card-main_presentation > div:not(.card-photo-wrapper) {
+	max-height: 350px;
+}
+
 /* ---LEFT PART--- */
 /* ----several photos---- */
 .card-photo-wrapper {
@@ -98,11 +102,13 @@ aside .fixed_aside_list {
 
 .card-photo {
 	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .card-photo img {
 	width: 100%;
-	height: 100%;
 }
 /* ---END LEFT PART--- */
 
@@ -110,7 +116,7 @@ aside .fixed_aside_list {
 /* ---RIGHT PART--- */
 .card-informations {
 	padding: 20px;
-	width: 70%;
+	width: 100%;
 	min-height: 140px;
 	display: flex;
 	flex-direction: column;
@@ -153,6 +159,7 @@ aside .fixed_aside_list {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin-top: 20px;
 }
 /* ---END RIGHT PART--- */
 
