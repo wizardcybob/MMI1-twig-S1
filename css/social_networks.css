@@ -47,7 +47,7 @@
     inset: 0;
     height: 100%;
     width: 100%;
-    border: 1px solid #fff;
+    border: 1px solid var(--white);
     border-radius: 5px;
     transition: all 0.3s;
     font-size: 25px;
@@ -90,32 +90,32 @@
 .social_networks_icons a:nth-child(1) i,
 .social_networks_icons a:nth-child(1) span,
 .social_networks_icons a:nth-child(1) .text {
-    color: white;
-    border-color: white;
+    color: var(--white);
+    border-color: var(--white);
 }
 
 .social_networks_icons a:nth-child(2) i,
 .social_networks_icons a:nth-child(2) span,
 .social_networks_icons a:nth-child(2) .text {
-    color: lightgreen;
-    border-color: lightgreen;
+    color: var(--main-color-light);
+    border-color: var(--main-color-light);
 }
 
 .social_networks_icons a:nth-child(3) i,
 .social_networks_icons a:nth-child(3) span,
 .social_networks_icons a:nth-child(3) .text {
-    color: green;
-    border-color: green;
+    color: var(--main-color);
+    border-color: var(--main-color);
 }
 
 .social_networks_icons a:hover:nth-child(1) span {
-    box-shadow: -1px 1px 3px white;
+    box-shadow: -1px 1px 3px var(--white);
 }
 
 .social_networks_icons a:hover:nth-child(2) span {
-    box-shadow: -1px 1px 3px lightgreen;
+    box-shadow: -1px 1px 3px var(--main-color-light);
 }
 
 .social_networks_icons a:hover:nth-child(3) span {
-    box-shadow: -1px 1px 3px green;
+    box-shadow: -1px 1px 3px var(--main-color);
 }

@@ -1,0 +1,13 @@
+:root {
+    --white: white;
+    --black: black;
+    --grey: grey;
+
+    --main-color-light: lightgreen;
+    --main-color: green;
+    --main-color-dark: darkgreen; /* btn hover */
+    
+    --bg-website: rgb(1, 22, 6);
+
+    --gradient-green: linear-gradient(to right, #6cca6c, green);
+}

@@ -44,14 +44,14 @@ form label {
 
 form input,
 form textarea {
-	color: white;
+	color: var(--white);
 	padding: 8px 10px;
 	min-height: 20px;
 	background-color: transparent;
-	border: 1px solid green;
+	border: 1px solid var(--main-color);
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
-	border-bottom: 4px solid green;
+	border-bottom: 4px solid var(--main-color);
 }
 
 form textarea {
@@ -61,7 +61,7 @@ form textarea {
 form input::placeholder,
 form textarea::placeholder {
 	opacity: 0;
-	color: grey;
+	color: var(--grey);
 }
 
 form input:focus,
@@ -74,7 +74,7 @@ textarea:focus + label,
 .floated_yet {
 	transform: translateY(-20px);
 	font-size: 12px;
-	background-color: rgb(1, 22, 6);
+	background-color: var(--bg-website);
 	padding: 0 10px;
 }
 
