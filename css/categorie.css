@@ -91,12 +91,17 @@ aside .fixed_aside_list {
     gap: 5px;
 }
 
-.single-image {
-    grid-template-columns: 1fr;
-}
-
 .card-photo-wrapper:not(.single-image) {
     grid-template-columns: repeat(3, 1fr);
+}
+
+.card-photo .clickable_image {
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+.card-photo:hover .clickable_image {
+    transform: scale(1.05);
 }
 /* ----end several photos---- */
 
@@ -109,6 +114,10 @@ aside .fixed_aside_list {
 
 .card-photo img {
 	width: 100%;
+}
+
+.single-image {
+    grid-template-columns: 1fr;
 }
 /* ---END LEFT PART--- */
 
