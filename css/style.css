@@ -4,8 +4,8 @@ html {
 }
 
 body {
-	background-color: rgb(1, 22, 6);
-	color: white;
+	background-color: var(--bg-website);
+	color: var(--white);
 	font-family: 'Poppins', sans-serif;
 	line-height: 1.3em;
 }
@@ -33,31 +33,31 @@ h3 {
 }
 
 a {
-	color: white;
+	color: var(--white);
 }
 
 .primary_btn {
 	padding: 10px 30px;
 	border-radius: 5px;
-	background-color: green;
-	color: white;
+	background-color: var(--main-color);
+	color: var(--white);
 	border: none;
 	cursor: pointer;
 }
 
 .primary_btn:hover {
-	background-color: darkgreen;
+	background-color: var(--main-color-dark);
 }
 
 
 /* HEADER */
 header {
-	background-color: black;
-	color: white;
+	background-color: var(--black);
+	color: var(--white);
 }
 
 .header_bandeau {
-	background-color: green;
+	background: var(--gradient-green);
 	transition: all 0.5s ease;
 }
 
@@ -97,7 +97,7 @@ header {
     width: 100%;
     top: 0;
 	z-index: 2000;
-	background: linear-gradient(black 90%, #0000);
+	background: linear-gradient(var(--black) 90%, #0000);
 }
 
 .header_fixed .header_bandeau {
@@ -138,12 +138,12 @@ nav {
 }
 
 .header_menu a {
-	color: grey;
+	color: var(--grey);
 	padding: 5px 10px;
 }
 
 .header_menu a:hover {
-	color: white;
+	color: var(--white);
 }
 
 
@@ -195,7 +195,7 @@ nav {
 
 /* FOOTER*/
 footer {
-	background-color: black;
+	background-color: var(--black);
 	position: relative;
 	padding-top: 100px;
 }
@@ -224,7 +224,7 @@ footer {
 	padding: 60px;
 	max-width: 1280px;
 	margin: 0 auto;
-	color: white;
+	color: var(--white);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
