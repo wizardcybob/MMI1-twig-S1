@@ -196,7 +196,7 @@ footer span {
 	font-weight: bold;
 }
 
-.social_networks {
+/* .social_networks {
 	display: flex;
 	align-items: center;
 	gap: 40px;
@@ -204,4 +204,4 @@ footer span {
 
 .social_networks .bi {
 	font-size: 28px;
-}
+} */

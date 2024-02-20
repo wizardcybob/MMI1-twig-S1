@@ -21,6 +21,7 @@
 	{# STYLES #}
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/social_networks.css">
 	{% block ccs_page %}{% endblock %}
 	{# ANIMATIONS AOS #}
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -92,10 +93,52 @@
 		<div class="footer_content">
 			<p>Site réalisé par <span>Chloé JACOB - <a href="https://www.instagram.com/wizardcybob" target="_blank">wizardcybob</a></span></p>
 			{# SOCIAL NETWORKS #}
-			<div class="social_networks">
+			{# <div class="social_networks">
 				<a href="https://www.linkedin.com/in/chlo%C3%A9-jacob-wizardcybob/" target="_blank"><i class="bi bi-linkedin"></i></a>
 				<a href="https://www.behance.net/chloejacob" target="_blank"><i class="bi bi-behance"></i></a>
 				<a href="https://www.instagram.com/wizardcybob" target="_blank"><i class="bi bi-instagram"></i></a>
+			</div> #}
+			<div class="social_networks_icons">
+				{# LINKEDIN #}
+				<a href="https://www.linkedin.com/in/chlo%C3%A9-jacob-wizardcybob/" target="_blank">
+					<div class="layer">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span><i class="bi bi-linkedin"></i></span>
+					</div>
+					<div class="text">
+						LinkedIn
+					</div>
+        		</a>
+				{# BEHANCE #}
+				<a href="https://www.behance.net/chloejacob" target="_blank">
+					<div class="layer">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span><i class="bi bi-behance"></i></span>
+						
+					</div>
+					<div class="text">
+						Behance
+					</div>
+        		</a>
+				{# INSTAGRAM #}
+				<a href="https://www.instagram.com/wizardcybob" target="_blank">
+					<div class="layer">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span><i class="bi bi-instagram"></i></span>
+					</div>
+					<div class="text">
+						Instagram
+					</div>
+        		</a>
 			</div>
 		</div>
 	</footer>
