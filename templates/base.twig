@@ -24,6 +24,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/social_networks.css">
 	{% block ccs_page %}{% endblock %}
+	{# <link rel="stylesheet" href="css/darkmode.css" id="style-wbesite-mode"> #}
 	{# ANIMATIONS AOS #}
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
@@ -42,29 +43,34 @@
 					<h1>TMB site</h1>
 				</div>
 			</a>
-			{# MENU présent dans toutes les pages héritant (extends) de ce modèle #}
-			<nav role="navigation">
-				<ul class="header_menu">
-					<li>
-						<a href="index.php">Accueil</a>
-					</li>
-					<li>
-						<a href="refuges.php">Refuges</a>
-					</li>
-					<li>
-						<a href="cols.php">Cols</a>
-					</li>
-					<li>
-						<a href="animaux.php">Animaux</a>
-					</li>
-					<li>
-						<a href="plantes.php">Plantes</a>
-					</li>
-					<li>
-						<a href="contact.php">Contact</a>
-					</li>
-				</ul>
-			</nav>
+			{# MENU #}
+			<div class="menu">
+				<nav role="navigation">
+					<ul class="header_menu">
+						<li>
+							<a href="index.php">Accueil</a>
+						</li>
+						<li>
+							<a href="refuges.php">Refuges</a>
+						</li>
+						<li>
+							<a href="cols.php">Cols</a>
+						</li>
+						<li>
+							<a href="animaux.php">Animaux</a>
+						</li>
+						<li>
+							<a href="plantes.php">Plantes</a>
+						</li>
+						<li>
+							<a href="contact.php">Contact</a>
+						</li>
+					</ul>
+				</nav>
+				{# <div id="websiteModeToggle" class="btn_website_mode">
+					<i class="bi bi-brightness-high"></i>
+				</div> #}
+			</div>
 		</div>
 	</header>
 
@@ -112,7 +118,7 @@
 					<div class="text">
 						LinkedIn
 					</div>
-        		</a>
+				</a>
 				{# BEHANCE #}
 				<a href="https://www.behance.net/chloejacob" target="_blank">
 					<div class="layer">
@@ -126,7 +132,7 @@
 					<div class="text">
 						Behance
 					</div>
-        		</a>
+				</a>
 				{# INSTAGRAM #}
 				<a href="https://www.instagram.com/wizardcybob" target="_blank">
 					<div class="layer">
@@ -139,7 +145,7 @@
 					<div class="text">
 						Instagram
 					</div>
-        		</a>
+				</a>
 			</div>
 		</div>
 	</footer>
@@ -150,6 +156,7 @@
 		AOS.init();
 	</script>
 	<script src="./js/header_scroll.js"></script>
+	{# <script src="./js/lightmode.js"></script> #}
 	{% block javascript %}{% endblock %}
 </body>
 

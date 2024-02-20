@@ -124,9 +124,31 @@ header {
 	font-size: 24px;
 }
 
+.btn_website_mode {
+	padding: 10px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--grey);
+}
+
+.btn_website_mode:hover {
+	color: var(--white);
+}
+
+.btn_website_mode i {
+	font-size: 20px;
+}
 
 
 /* MENU */
+.menu {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+}
+
 nav {
 	display: flex;
 	align-items: center;
@@ -218,7 +240,7 @@ footer {
 }
 
 .custom-shape-divider-top .shape-fill {
-    fill: rgb(1, 22, 6);
+    fill: var(--bg-website);
 }
 
 .footer_content {

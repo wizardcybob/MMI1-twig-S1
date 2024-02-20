@@ -3,6 +3,7 @@
     --black: black;
     --grey: grey;
 
+    /* DARKMODE */
     --main-color-light: lightgreen;
     --main-color: green;
     --main-color-dark: darkgreen; /* btn hover */
@@ -10,4 +11,13 @@
     --bg-website: rgb(1, 22, 6);
 
     --gradient-green: linear-gradient(to right, #6cca6c, var(--main-color-dark));
+
+    /* LIGHTMODE */
+    --lightmode-main-color-light: rgb(179, 249, 179);
+    --lightmode-main-color: rgb(69, 180, 69);
+    --lightmode-main-color-dark: rgb(34, 124, 34); /* btn hover */
+    
+    --lightmode-bg-website: rgb(184, 184, 184);
+
+    --lightmode-gradient-green: linear-gradient(to right, #6cca6c, var(--lightmode-main-color-dark));
 }
