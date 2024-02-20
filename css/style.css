@@ -50,7 +50,7 @@ a {
 }
 
 
-/* --HEADER-- */
+/* HEADER */
 header {
 	background-color: black;
 	color: white;
@@ -58,6 +58,7 @@ header {
 
 .header_bandeau {
 	background-color: green;
+	transition: all 0.5s ease;
 }
 
 .header_bandeau p {
@@ -65,7 +66,8 @@ header {
 	margin: 0 auto;
 	padding: 5px 60px;
 	font-size: 12px;
-	text-align: center;	
+	text-align: center;
+	opacity: 1;
 }
 
 .header_main-content {	
@@ -74,6 +76,7 @@ header {
 	padding: 40px 60px;
 	display: flex;
 	justify-content: space-between;
+	transition: all 0.5s ease;
 }
 
 .header_identity_website {
@@ -85,7 +88,42 @@ header {
 .logo {
 	filter: invert(1);
 	width: 100px;
+	transition: all 0.5s ease;
 }
+
+/* --scroll header-- */
+.header_fixed {
+    position: fixed;
+    width: 100%;
+    top: 0;
+	z-index: 2000;
+	background: linear-gradient(black 90%, #0000);
+}
+
+.header_fixed .header_bandeau {
+	transform: translateY(-100px);
+}
+
+.header_fixed .header_bandeau p {
+	height: 0;
+	padding: 0;
+	opacity: 0;
+	font-size: 0px;
+	visibility: hidden;
+}
+
+.header_fixed .header_main-content {
+	padding: 20px 60px;
+}
+
+.header_fixed .logo {
+	width: 70px;
+}
+
+.header_fixed h1 {
+	font-size: 24px;
+}
+
 
 
 /* MENU */
