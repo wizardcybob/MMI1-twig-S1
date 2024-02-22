@@ -19,13 +19,14 @@
         <div class="form_area" data-aos="zoom-in-down" data-aos-duration="800" data-aos-anchor-placement="top-bottom">
             {# SHOW DATA FORM #}
             {% if data_form %}
-            <div>
+            <div class="form_data">
                 <h3>Affichage des données du formulaire :</h3>
-                <div class="form_data">
+                {% if image_info %}
+                    <img src="{{ image_info.file_path }}" alt="{{ image_info.file_name }}">
+                {% endif %}
+                <div class="form_data_lines">
                     {% for key, value in data_form %}
-                        {% if value and key == 'photo' %}
-                            <p><span>{{ key }} : </span><img src="/images/uploads/{{ value }}" alt="{{ value }}"></p>
-                        {% elseif value %}
+                        {% if value and key != 'submit' %}
                             <p><span>{{ key }} : </span>{{ value }}</p>
                         {% endif %}
                     {% endfor %}
@@ -37,7 +38,7 @@
             {# FORMULAIRE #}
             <div> 
                 <h3>Formulaire :</h3>
-                <form method="post" action="./contact.php">
+                <form method="post" action="./contact.php" enctype="multipart/form-data">
                     {# FIRSTNAME / NAME #}
                     <div class="form_2_col">
                         <div>
@@ -66,7 +67,7 @@
                     </div>
                     {# BTN #}
                     <div class="form_btn">
-                        <input type="submit" class="primary_btn" value="Envoyer le formulaire">
+                        <input type="submit" name="submit" class="primary_btn" value="Envoyer le formulaire">
                     </div>
                 </form>
             </div>
