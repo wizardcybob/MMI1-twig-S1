@@ -75,6 +75,8 @@ form textarea:focus {
 
 input:focus + label,
 textarea:focus + label,
+input:not(:placeholder-shown) + label,
+textarea:not(:placeholder-shown) + label,
 .floated_yet {
 	transform: translateY(-20px);
 	font-size: 12px;
@@ -92,6 +94,10 @@ form textarea:focus::placeholder {
 	align-items: center;
 	justify-content: center;
 	margin-top: 10px;
+}
+
+.form_btn p {
+	font-size: 10px;
 }
 
 /* ----displaying data---- */

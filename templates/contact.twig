@@ -54,22 +54,22 @@
                     <div class="form_2_col">
                         <div>
                             <input type="text" id="firstname" name="firstname" placeholder="Votre prénom" required>
-                            <label for="firstname">Prénom :</label>
+                            <label for="firstname">Prénom<sup>*</sup> :</label>
                         </div>
                         <div>
                             <input type="text" id="name" name="name" placeholder="Votre nom" required>
-                            <label for="name">Nom :</label>
+                            <label for="name">Nom<sup>*</sup> :</label>
                         </div>
                     </div>
                     {# MAIL #}
                     <div>
                         <input type="email" id="mail" name="mail" placeholder="Votre email" required>
-                        <label for="mail">Mail :</label>
+                        <label for="mail">Mail<sup>*</sup> :</label>
                     </div>
                     {# MESSAGE #}
                     <div>
                         <textarea id="description" name="description" rows="5" cols="33" placeholder="Votre message" required></textarea>
-                        <label for="description">Message :</label>
+                        <label for="description">Message<sup>*</sup> :</label>
                     </div>
                     {# PHOTO #}
                     <div>
@@ -78,6 +78,7 @@
                     </div>
                     {# BTN #}
                     <div class="form_btn">
+                        <p>*Champs obligatoires.</p>
                         <input type="submit" name="submit" class="primary_btn" value="Envoyer le formulaire">
                     </div>
                 </form>
