@@ -127,3 +127,9 @@ ul.form_data_messages li {
 	border: 2px solid var(--main-color-light);
 	background-color: var(--grey);
 }
+
+.form_data_btn_area {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

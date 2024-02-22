@@ -4,7 +4,6 @@
 include('include/twig.php');
 $twig = init_twig();
 
-
 // UPLOAD IMAGE
 // Initialize form data array
 $form_data = [];
@@ -19,15 +18,23 @@ $image_info = [
 $messages = [];
 
 // Load existing data from file
-$file_path = './form_data.txt';
-$existing_data = file_get_contents($file_path);
+$file_path_all = './all_form_data.txt';
+$file_path_current = './form_data.txt';
+
+$existing_data_all = file_get_contents($file_path_all);
+$existing_data_current = file_get_contents($file_path_current);
 
 // Decode existing data into an associative array
-$existing_data_array = json_decode($existing_data, true);
+$existing_data_array_all = json_decode($existing_data_all, true);
+$existing_data_array_current = json_decode($existing_data_current, true);
 
 // If existing data is not an array, initialize it as an empty array
-if (!is_array($existing_data_array)) {
-    $existing_data_array = [];
+if (!is_array($existing_data_array_all)) {
+    $existing_data_array_all = [];
+}
+
+if (!is_array($existing_data_array_current)) {
+    $existing_data_array_current = [];
 }
 
 // Check if the form is submitted
@@ -38,13 +45,17 @@ if (isset($_POST['submit'])) {
     $form_data['name'] = isset($_POST['name']) ? $_POST['name'] : '';
     $form_data['mail'] = isset($_POST['mail']) ? $_POST['mail'] : '';
     $form_data['description'] = isset($_POST['description']) ? $_POST['description'] : '';
-    $form_data['photo'] = isset($_POST['photo']) ? $_POST['photo'] : '';
+    $form_data['photo'] = isset($_FILES['photo']['name']) ? $_FILES['photo']['name'] : '';
 
-    // Add the new form data to the existing array
-    $existing_data_array[] = $form_data;
+    // Add the new form data to the all data array
+    $existing_data_array_all[] = $form_data;
 
-    // Encode the updated array into JSON format
-    $file_content = json_encode($existing_data_array, JSON_PRETTY_PRINT);
+    // Update the current data array
+    $existing_data_array_current = [$form_data];
+
+    // Encode the updated arrays into JSON format
+    $file_content_all = json_encode($existing_data_array_all, JSON_PRETTY_PRINT);
+    $file_content_current = json_encode($existing_data_array_current, JSON_PRETTY_PRINT);
 
     // Process image upload
     $file = $_FILES['photo'];
@@ -87,14 +98,20 @@ if (isset($_POST['submit'])) {
         $messages[] = "Mauvais format d'image. Les formats autorisés sont : " . implode(', ', $allowed);
     }
 
-    // Write the data to the file
-    if (file_put_contents($file_path, $file_content) !== false && !empty($image_info['file_path'])) {
+    // Write the data to the files
+    if (file_put_contents($file_path_all, $file_content_all) !== false && !empty($image_info['file_path'])) {
         $messages[] = 'Données du formulaire et image sauvegardées avec succès.';
-    } elseif (file_put_contents($file_path, $file_content) !== false) {
+    } elseif (file_put_contents($file_path_all, $file_content_all) !== false) {
         $messages[] = 'Données du formulaire sauvegardées avec succès, mais aucune image n\'a été téléchargée.';
     } else {
         $messages[] = 'Erreur lors de la sauvegarde des données du formulaire.';
     }
+
+    if (file_put_contents($file_path_current, $file_content_current) === false) {
+        $messages[] = 'Erreur lors de la sauvegarde des données du formulaire.';
+    }
+
+    $download_data = json_encode($existing_data_array_all, JSON_PRETTY_PRINT);
 }
 
 // Lancement du moteur Twig
