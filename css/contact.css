@@ -96,7 +96,8 @@ form textarea:focus::placeholder {
 	margin-top: 10px;
 }
 
-.form_btn p {
+.form_btn p,
+.info_form {
 	font-size: 10px;
 }
 
