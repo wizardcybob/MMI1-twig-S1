@@ -7,15 +7,12 @@ $twig = init_twig();
 // UPLOAD IMAGE
 // Initialize form data array
 $form_data = [];
-
-// Initialize image info array
 $image_info = [
     'file_path' => '',
     'file_name' => '',
 ];
-
-// Initialize messages array
 $messages = [];
+$form_data['date_sent'] = '';
 
 // Load existing data from file
 $file_path_all = './all_form_data.txt';
@@ -46,6 +43,17 @@ if (isset($_POST['submit'])) {
     $form_data['mail'] = isset($_POST['mail']) ? $_POST['mail'] : '';
     $form_data['description'] = isset($_POST['description']) ? $_POST['description'] : '';
     $form_data['photo'] = isset($_FILES['photo']['name']) ? $_FILES['photo']['name'] : '';
+    $form_data['date_sent'] = date('d-m-Y H:i');
+    // Ajouter la localisation basée sur l'adresse IP
+    $ip_address = $_SERVER['REMOTE_ADDR'];
+    $geolocation_data = json_decode(file_get_contents("http://ip-api.com/json/{$ip_address}"));
+
+    if ($geolocation_data && $geolocation_data->status == 'success') {
+        $form_data['location'] = $geolocation_data->city . ', ' . $geolocation_data->country;
+    } else {
+        $form_data['location'] = 'Localisation non disponible';
+    }
+
 
     // Add the new form data to the all data array
     $existing_data_array_all[] = $form_data;
@@ -95,7 +103,9 @@ if (isset($_POST['submit'])) {
             $messages[] = "L'image est trop lourde ! La taille maximale autorisée est de 150 ko. La largeur maximale autorisée est de 960px.";
         }
     } else {
-        $messages[] = "Mauvais format d'image. Les formats autorisés sont : " . implode(', ', $allowed);
+        if (!empty($fileName)) {
+            $messages[] = "Mauvais format d'image. Les formats autorisés sont : " . implode(', ', $allowed);
+        }
     }
 
     // Write the data to the files
@@ -122,6 +132,7 @@ echo $twig->render('contact.twig', [
     'data_form' => $_POST,
     'image_info' => $image_info,
     'messages' => $messages,
+    'date_sent' => $form_data['date_sent'],
 ]);
 
 ?>

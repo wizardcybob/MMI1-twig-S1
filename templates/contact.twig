@@ -31,6 +31,9 @@
                         {% endif %}
                     {% endfor %}
                 </div>
+                {% if date_sent %}
+                <p class="form_data_lines_date"><span>Date d'envoi du formulaire : </span>{{ date_sent }}</p>
+                {% endif %}
                 <div class="form_data_btn_area">
                     <a href="./form_data.txt" download="donnees_formulaire_tmb.json" class="primary_btn">Télécharger mes données !</a>
                 </div>
