@@ -46,13 +46,6 @@ if (isset($_POST['submit'])) {
     // Encode the updated array into JSON format
     $file_content = json_encode($existing_data_array, JSON_PRETTY_PRINT);
 
-    // Write the data to the file
-    if (file_put_contents($file_path, $file_content) !== false) {
-        $messages[] = 'Données du formulaire sauvegardées avec succès.';
-    } else {
-        $messages[] = 'Erreur lors de la sauvegarde des données du formulaire.';
-    }
-
     // Process image upload
     $file = $_FILES['photo'];
     $fileName = $_FILES['photo']['name'];
@@ -65,24 +58,42 @@ if (isset($_POST['submit'])) {
     $fileActualExt = strtolower(end($fileExt));
 
     $allowed = array('jpg', 'jpeg', 'png');
+    
+    // indicate file size
+    $maxFileSize = 150 * 1024; // 150 ko
+    $maxImageWidth = 960; // 960px max-width
 
     if (in_array($fileActualExt, $allowed)) {
         if ($fileError === 0) {
-            if ($fileSize < 1000000) {
-                $fileDestination = './images/uploads/' . $fileName;
-                move_uploaded_file($fileTmpName, $fileDestination);
+            if ($fileSize < $maxFileSize) {
+                list($width, $height) = getimagesize($fileTmpName);
+                if ($width <= $maxImageWidth) {
+                    $fileDestination = './images/uploads/' . $fileName;
+                    move_uploaded_file($fileTmpName, $fileDestination);
 
-                // Update image info
-                $image_info['file_path'] = './images/uploads/' . $fileName;
-                $image_info['file_name'] = $fileName;
+                    // Update image info
+                    $image_info['file_path'] = './images/uploads/' . $fileName;
+                    $image_info['file_name'] = $fileName;
+                } else {
+                    $messages[] = "L'image est trop large. La largeur maximale autorisée est de {$maxImageWidth} pixels.";
+                }
             } else {
-                $messages[] = "Fichier trop gros !";
+                $messages[] = "L'image est trop lourde ! La taille maximale autorisée est de 150 ko.";
             }
         } else {
-            $messages[] = "Problème lors de l'upload...";
+            $messages[] = "L'image est trop lourde ! La taille maximale autorisée est de 150 ko. La largeur maximale autorisée est de 960px.";
         }
     } else {
-        $messages[] = "Mauvais format d'image.";
+        $messages[] = "Mauvais format d'image. Les formats autorisés sont : " . implode(', ', $allowed);
+    }
+
+    // Write the data to the file
+    if (file_put_contents($file_path, $file_content) !== false && !empty($image_info['file_path'])) {
+        $messages[] = 'Données du formulaire et image sauvegardées avec succès.';
+    } elseif (file_put_contents($file_path, $file_content) !== false) {
+        $messages[] = 'Données du formulaire sauvegardées avec succès, mais aucune image n\'a été téléchargée.';
+    } else {
+        $messages[] = 'Erreur lors de la sauvegarde des données du formulaire.';
     }
 }
 
