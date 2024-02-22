@@ -31,6 +31,14 @@
                         {% endif %}
                     {% endfor %}
                 </div>
+                {# DISPLAY MESSAGES FORM #}
+                {% if messages %}
+                    <ul class="form_data_messages">
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
             </div>
 
 
