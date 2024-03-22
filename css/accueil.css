@@ -90,7 +90,7 @@ section.statistiques li {
 /* ----GALERIE---- */
 section.galerie .photos_area {
     display: grid;
-    grid-template-columns: repeat(8, 1fr); /* 6 colonnes égales */
+    grid-template-columns: repeat(8, 1fr); /* 8 colonnes égales */
     gap: 5px;
     margin: 20px 0;
 }
