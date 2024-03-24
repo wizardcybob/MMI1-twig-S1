@@ -111,6 +111,14 @@
         padding: 50px 20px;
     }
 
+    section.statistiques > div {
+        flex-direction: column;
+    }
+
+    section.statistiques > div > * {
+        width: 80%;
+    }
+
     section.galerie .photos_area {
         grid-template-columns: repeat(3, 1fr);
     }
