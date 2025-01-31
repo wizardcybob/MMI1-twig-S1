@@ -1,0 +1,135 @@
+@media (max-width: 1240px) { /* à partir de 1240px ce code est plus pris en compte */
+    /* GENERAL */
+    h2 {
+        font-size: 30px;
+        margin: 20px 0;
+    }
+
+    .main {
+        padding: 50px 40px;
+    }
+
+    .wrap_categorie {
+        flex-direction: column-reverse;
+    }
+
+    .deux_col div {
+        width: 100%;
+    }
+
+    section.description ul {
+        margin: 10px 20px 0;
+    }
+
+    /* HEADER */
+    .header_main-content {
+        display: flex;
+        justify-content: center;
+        padding: 20px 40px;
+    }
+    
+    /* MENU */
+    .menu {
+        visibility: hidden;
+        width: 0;
+    }
+
+    /* HOME */
+    .home_section {
+        height: auto;
+        padding: 0 20px;
+    }
+
+    .deux_col {
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+
+    .statistiques_image .clickable_image {
+        width: 100%;
+        transform: scale(1);
+        transition: all 0.3s ease;
+    }
+
+    section.galerie .photos_area {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    /* CATEGORIES */
+    .fixed_aside {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+    }
+
+    .card-main_presentation {
+        flex-direction: column;
+    }
+
+    .card-main_presentation > div {
+        width: 100%;
+    }
+
+    /* FOOTER */
+    .footer_content {
+        padding: 40px;
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .social_networks_icons {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .social_networks_icons .text {
+        visibility: hidden;
+    }
+}
+
+@media (max-width: 1080px) { /* à partir de 1080px ce code est plus pris en compte */
+    section.galerie .photos_area {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .form_area {
+        width: 100%;
+    }
+}
+
+@media (max-width: 760px) { /* à partir de 760px ce code est plus pris en compte */
+    h1 {
+        font-size: 30px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    .main {
+        padding: 50px 20px;
+    }
+
+    section.statistiques > div {
+        flex-direction: column;
+    }
+
+    section.statistiques > div > * {
+        width: 80%;
+    }
+
+    section.galerie .photos_area {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 540px) { /* à partir de 540px ce code est plus pris en compte */
+    h1 {
+        font-size: 25px;
+    }
+
+    section.galerie .photos_area {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
