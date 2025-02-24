@@ -1,0 +1,73 @@
+{% extends "base.twig" %}
+
+
+{% block title %}
+	{{ title_page }}
+{% endblock %}
+
+{% block ccs_page %}
+	<link rel="stylesheet" href="css/contact.css">
+{% endblock %}
+
+
+{% block main %}
+
+    <section class="main">
+        <h2>{{ titre }}</h2>
+        <p class="text_contact">{{ texte }}</p>
+
+        <div class="form_area" data-aos="zoom-in-down" data-aos-duration="800" data-aos-anchor-placement="top-bottom">
+            {# SHOW DATA FORM #}
+            {% if data_formulaire_simple %}
+            <div class="form_data">
+                <h3>Affichage des données du formulaire :</h3>
+                <div class="form_data_lines">
+                    {# BOUCLE POUR AFFICHER LES DONNEES DU FORMULAIRE #}
+                    {% for key, value in data_formulaire_simple %}
+                        {% if value and key != 'submit' %}
+                            <p><span>{{ key }} : </span>{{ value }}</p>
+                        {% endif %}
+                    {% endfor %}
+                    {# FIN DE LA BOUCLE #}
+                </div>
+            </div>
+
+
+            {% else %}
+            {# FORMULAIRE #}
+            <div> 
+                <h3>Formulaire :</h3>
+                <form method="get" action="./contact_simple.php" enctype="multipart/form-data">
+                    {# FIRSTNAME / NAME #}
+                    <div class="form_2_col">
+                        <div>
+                            <input type="text" id="firstname" name="firstname" placeholder="Votre prénom" required>
+                            <label for="firstname">Prénom<sup>*</sup> :</label>
+                        </div>
+                        <div>
+                            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                            <label for="name">Nom<sup>*</sup> :</label>
+                        </div>
+                    </div>
+                    {# MAIL #}
+                    <div>
+                        <input type="email" id="mail" name="mail" placeholder="Votre email" required>
+                        <label for="mail">Mail<sup>*</sup> :</label>
+                    </div>
+                    {# MESSAGE #}
+                    <div>
+                        <textarea id="description" name="description" rows="5" cols="33" placeholder="Votre message" required></textarea>
+                        <label for="description">Message<sup>*</sup> :</label>
+                    </div>
+                    {# BTN #}
+                    <div class="form_btn">
+                        <p>*Champs obligatoires.</p>
+                        <input type="submit" name="submit" class="primary_btn" value="Envoyer le formulaire">
+                    </div>
+                </form>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+
+{% endblock main %}
