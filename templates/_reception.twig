@@ -2,6 +2,8 @@
 
 {% block main %}
 
+    {# Affichage TWIG SIMPLE des données du formulaire en se basant du fichier reception.php (vu en cours) #}
+    
     <div class="form_data">
     {% for key,value in data_form %}
             <p><span>{{ key }} : </span>{{ value }}</p>

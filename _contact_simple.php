@@ -1,5 +1,5 @@
 <?php
-    // EXEMPLE POUR UN FORMULAIRE PLUS SIMPLE
+    // EXEMPLE POUR UNE PAGE CONTACT FORMULAIRE & AFFICHAGE DES DONNEES PLUS SIMPLE
     include('include/twig.php');
     $twig = init_twig();
 

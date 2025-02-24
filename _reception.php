@@ -7,6 +7,9 @@
 </head>
 
 <body>
+	<!-- Pour un affichage des données du fomulaire SIMPLE en se servant du fichier reception.php vu en cours -->
+	<p>Pour un affichage des données du fomulaire SIMPLE en se servant du fichier reception.php vu en cours</p>
+	
 	<!-- METHODE POST -->
 	<div>
 		<div>Variables reçues par la méthode POST :</div>
