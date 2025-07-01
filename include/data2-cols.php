@@ -2,6 +2,26 @@
 // Exemple des données pour les tests
 
 // Un tableau associatif
+$col_tricot = [
+    'id' => 2,
+    'name' => 'Col du Tricot',
+    'map' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2786.1095798434695!2d6.825846414336864!3d45.75976947910599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478a6517171278a5%3A0x2d5152c151f8824!2sCol%20du%20Tricot!5e0!3m2!1sfr!2sfr!4v1707053793063!5m2!1sfr!2sfr',
+    'country' => 'France',
+    'altitude' => 2120,
+    'photos' => [
+        './images/cols/col_tricot1.jpg',
+        './images/cols/col_tricot2.jpg',
+        './images/cols/col_tricot3.jpg',
+        './images/cols/col_tricot4.jpg',
+    ],
+    'section_TMB' => [
+        'step' => 'Les Houches → Les Contamines',
+        'day' => 1,
+        'distance_km' => 16.9,
+        'plants_around' => ['Arnica', 'Gentiane', 'Bruyère', 'Saxifrage']
+    ],
+];
+
 $col_croix_bonhome = [
     'id' => 1,
 	'name' => 'Le Col de la Croix du Bonhomme',
@@ -14,19 +34,11 @@ $col_croix_bonhome = [
         './images/cols/col_bonhomme3.jpg',
         './images/cols/col_bonhomme4.jpg',
     ],
-];
-
-$col_tricot = [
-    'id' => 2,
-    'name' => 'Col du Tricot',
-    'map' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2786.1095798434695!2d6.825846414336864!3d45.75976947910599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478a6517171278a5%3A0x2d5152c151f8824!2sCol%20du%20Tricot!5e0!3m2!1sfr!2sfr!4v1707053793063!5m2!1sfr!2sfr',
-    'country' => 'France',
-    'altitude' => 2120,
-    'photos' => [
-        './images/cols/col_tricot1.jpg',
-        './images/cols/col_tricot2.jpg',
-        './images/cols/col_tricot3.jpg',
-        './images/cols/col_tricot4.jpg',
+    'section_TMB' => [
+        'step' => 'Les Contamines → Refuge des Chapieux',
+        'day' => 3,
+        'distance_km' => 20.1,
+        'plants_around' => ['Genepi', 'Arnica', 'Gentiane', 'Saxifrage', 'Aster'],
     ],
 ];
 
@@ -42,6 +54,12 @@ $col_fours = [
         './images/cols/col_fours3.jpg',
         './images/cols/col_fours4.jpg',
     ],
+    'section_TMB' => [
+        'step' => 'Les Contamines → Refuge des Chapieux',
+        'day' => 3,
+        'distance_km' => 20.1,
+        'plants_around' => ['Genepi', 'Arnica', 'Saxifrage', 'Aster']
+    ],
 ];
 
 $col_seigne = [
@@ -56,6 +74,12 @@ $col_seigne = [
         './images/cols/col_seigne3.jpg',
         './images/cols/col_seigne4.jpg',
     ],
+    'section_TMB' => [
+        'step' => 'Refuge des Chapieux → Courmayeur',
+        'day' => 4,
+        'distance_km' => 21.5,
+        'plants_around' => ['Gentiane', 'Saxifrage', 'Edelweiss', 'Genepi']
+    ],
 ];
 
 $col_grand_ferret = [
@@ -67,7 +91,13 @@ $col_grand_ferret = [
     'photos' => [
         './images/cols/col_ferret1.jpg',
     ],
+    'section_TMB' => [
+        'step' => 'La Fouly → Champex',
+        'day' => 7,
+        'distance_km' => 15.0,
+        'plants_around' => ['Genepi', 'Saxifrage', 'Aster', 'Bruyère']
+    ],
 ];
 
 // ALL COLS
-$cols_data = [$col_croix_bonhome, $col_tricot, $col_fours, $col_seigne, $col_grand_ferret];
+$cols_data = [$col_tricot, $col_croix_bonhome, $col_fours, $col_seigne, $col_grand_ferret];
