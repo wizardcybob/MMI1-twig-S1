@@ -64,7 +64,7 @@
 							{% if col.section_TMB is defined %}
 								<li>
 									<span>Section TMB :</span>
-									<ul>
+									<ul class="card-informations-details_section-tmb">
 										<li><span>Étape : </span>{{ col.section_TMB.step }}</li>
 										<li><span>Jour : </span>{{ col.section_TMB.day }}</li>
 										<li><span>Distance : </span>{{ col.section_TMB.distance_km }} km</li>
@@ -73,7 +73,7 @@
 										{% if col.section_TMB.plants_around is defined and col.section_TMB.plants_around|length > 0 %}
 											<li>
 												<span>Plantes visibles :</span>
-												<ul>
+												<ul class="card-informations-details_section-tmb-cols-plantes">
 													{% for plante in col.section_TMB.plants_around %}
 														<li>{{ plante }}</li>
 													{% endfor %}
