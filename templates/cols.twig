@@ -59,6 +59,30 @@
 							{% if col.country %}
 								<li><span>Pays : </span>{{ col.country }}</li>
 							{% endif %}
+
+							{# SECTION TMB #}
+							{% if col.section_TMB is defined %}
+								<li>
+									<span>Section TMB :</span>
+									<ul>
+										<li><span>Étape : </span>{{ col.section_TMB.step }}</li>
+										<li><span>Jour : </span>{{ col.section_TMB.day }}</li>
+										<li><span>Distance : </span>{{ col.section_TMB.distance_km }} km</li>
+
+										{# plantes visibles #}
+										{% if col.section_TMB.plants_around is defined and col.section_TMB.plants_around|length > 0 %}
+											<li>
+												<span>Plantes visibles :</span>
+												<ul>
+													{% for plante in col.section_TMB.plants_around %}
+														<li>{{ plante }}</li>
+													{% endfor %}
+												</ul>
+											</li>
+										{% endif %}
+									</ul>
+								</li>
+							{% endif %}
 						</ul>
 					</div>
 				</div>
