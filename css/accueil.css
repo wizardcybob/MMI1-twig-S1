@@ -1,6 +1,13 @@
 /* --ACCUEIL-- */
+.home_section_container {
+    display: flex;
+    max-width: 1280px;
+	margin: 0 auto;
+}
+
 .home_section {
 	height: calc(100vh - 150px);
+    max-height: 800px;
 	padding: 0 200px;
 	background-image: 
 		linear-gradient(to top, #000000b3, rgba(0, 0, 0, 0)), /* gradient to top */
