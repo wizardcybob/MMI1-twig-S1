@@ -3,7 +3,7 @@
 
 // Un tableau associatif
 $col_tricot = [
-    'id' => 2,
+    'id' => 1,
     'name' => 'Col du Tricot',
     'map' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2786.1095798434695!2d6.825846414336864!3d45.75976947910599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478a6517171278a5%3A0x2d5152c151f8824!2sCol%20du%20Tricot!5e0!3m2!1sfr!2sfr!4v1707053793063!5m2!1sfr!2sfr',
     'country' => 'France',
@@ -23,7 +23,7 @@ $col_tricot = [
 ];
 
 $col_croix_bonhome = [
-    'id' => 1,
+    'id' => 2,
 	'name' => 'Le Col de la Croix du Bonhomme',
 	'map' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11141.783890368475!2d6.718922999999999!3d45.72215035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47895de9670d1e1b%3A0xa5c3b41ebb7ec82b!2sCol%20de%20la%20Croix%20du%20Bonhomme!5e0!3m2!1sfr!2sfr!4v1707053270019!5m2!1sfr!2sfr',
 	'country' => 'France',
