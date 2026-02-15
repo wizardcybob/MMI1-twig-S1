@@ -1,0 +1,23 @@
+{% extends "base.twig" %}
+
+
+{% block title %}
+	{{ title_page }}
+{% endblock %}
+
+
+{# BLOCK CHILD_MAIN #}
+{% block main %}
+
+	{% for refuge in all_refuges %}
+		<h2>{{ refuge.name }}</h2>
+		<ul>
+			<li><span>Altitude : </span>{{ refuge.altitude }} m</li>
+			<li><span>Pays : </span>{{ refuge.country }}</li>
+			<li><span>Création : </span>{{ refuge.creation|date("d/m/Y") }}</li>
+			<li><span>Nombre d'années d'activité : </span>{{ refuge_years }} ans</li>
+			<li><span>Capacité : </span>{{ refuge.capacity }} places</li>
+		</ul>
+	{% endfor %}
+
+{% endblock main %}
