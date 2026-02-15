@@ -168,6 +168,32 @@ nav {
 	color: var(--white);
 }
 
+.header_menu li ul {
+	display: none;
+	position: absolute;
+	background-color: var(--black);
+	padding-top: 10px;
+}
+
+.header_menu li:hover ul {
+	display: block;
+}
+
+.header_menu li ul a {
+	display: block;
+	padding: 10px;
+}
+
+.header_menu li a i::before {
+    transition: transform 0.5s ease;
+	margin-left: 6px;
+	transform: translateY(1.75px);
+}
+
+.header_menu li:hover a i::before {
+	transform: rotate(180deg);
+}
+
 
 /* MAIN */
 main {
