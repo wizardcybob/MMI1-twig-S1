@@ -1,0 +1,114 @@
+{% extends "categorie.twig" %}
+
+
+{% block title %}
+	{{ title_page }}
+{% endblock %}
+
+{% block ccs_page %}
+	<link rel="stylesheet" href="css/categorie.css">
+	<link rel="stylesheet" href="css/card_effect.css">
+	<link rel="stylesheet" href="css/toggle_lang.css">
+{% endblock %}
+
+
+
+{# BLOCK ASIDE #}
+{% block aside %}
+
+	<aside>
+		<div class="fixed_aside">
+			<h3>{{ title_aside }}&nbsp;:</h3>
+			<div class="fixed_aside_list">
+				<ul class="sous-menu_categorie">
+					{% for refuge in all_refuges %}
+						<li>
+							<a href="#{{ refuge.id }}">{{ refuge.name }}</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</aside>
+
+{% endblock aside %}
+
+
+{# BLOCK CHILD_MAIN #}
+{% block child_main %}
+
+	<div class="child_main">
+		{# TOGGLE #}
+		<div class="language-toggle">
+			<a href="?lang=fr" class="lang-btn {% if lang == 'fr' %}active{% endif %}">FR</a>
+			<a href="?lang=en" class="lang-btn {% if lang == 'en' %}active{% endif %}">EN</a>
+		</div>
+		
+		{% for refuge in all_refuges %}
+
+			{# age calculation #}
+			{% set startDate = refuge.creation %}
+			{% set difference = date(now|date()).diff(date(startDate)) %}
+			{% set refuge_years = difference.y %}
+			{# y = years #}
+
+			<div class="card" id="{{ refuge.id }}" data-aos="zoom-in-down" data-aos-duration="800" data-aos-anchor-placement="top-bottom">
+				<h2>{{ refuge.name }}</h2>
+				{# main presentation #}
+				<div class="card-main_presentation">
+					{# left part -> PHOTO #}
+					{% if refuge.photo %}
+						<div class="card-photo">
+							<img src="{{ refuge.photo }}" alt="{{ refuge.name }}" width="320">
+						</div>
+					{% endif %}
+					{# right part -> card informations #}
+					<div class="container_effect">
+						<div class="card-informations card-informations_effect">
+							<h3>{{ card_titre }}</h3>
+							<ul class="card-informations-details">
+								{# ALTITUDE #}
+								{% if refuge.altitude %}
+									<li><span>{{ altitude }} : </span>{{ refuge.altitude }} m</li>
+								{% endif %}
+
+								{# COUNTRY #}
+								{% if refuge.country %}
+									<li><span>{{ pays }} : </span>{{ refuge.country }}</li>
+								{% endif %}
+
+								{# CREATION #}
+								{% if refuge.creation %}
+									<li><span>{{ creation }} : </span>{{ refuge.creation|date("d/m/Y") }}</li>
+								{% endif %}
+
+								{# AGE #}
+								{% if refuge_years %}
+									<li><span>{{ actif }} : </span>{{ refuge_years }} {{ age }}</li>
+								{% endif %}
+
+								{# CAPACITY #}
+								{% if refuge.capacity %}
+									<li><span>{{ capacite }} : </span>{{ refuge.capacity }} places</li>
+								{% endif %}
+							</ul>
+							<div class="card-informations-footer">
+								{# WEBSITE LINK #}
+								{% if refuge.website %}
+									<a class="primary_btn" href="{{ refuge.website }}" target="_blank">{{ website_link }}</a>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				</div>
+				{# MAP #}
+				{% if refuge.map %}
+					<div class="card-map">
+						<iframe src="{{ refuge.map }}" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					</div>
+				{% endif %}
+			</div>
+		{% endfor %}
+	</div>
+
+{% endblock child_main %}

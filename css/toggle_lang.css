@@ -1,0 +1,29 @@
+/* TOGGLE CHANGEMENT DE LANGUE */
+.language-toggle {
+    display: inline-flex;
+    background: var(--main-color-light);
+    border-radius: 25px;
+    padding: 4px;
+    gap: 4px;
+    width: fit-content;
+}
+
+.lang-btn {
+    font-weight: bold !important;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.lang-btn:hover {
+    color: var(--white);
+}
+
+.lang-btn.active {
+    background: var(--main-color-dark);
+    color: var(--white);
+}
